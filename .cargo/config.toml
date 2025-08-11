@@ -1,0 +1,20 @@
+# Cargo configuration file
+
+# WebAssembly target configuration
+[target.wasm32-unknown-unknown]
+# Runner for wasm-bindgen test framework
+# runner = "wasm-bindgen-test-runner"
+
+# Web platform runner for wasm32-unknown-unknown
+[target.'cfg(target_arch = "wasm32")']
+# runner = "wasm-server-runner"
+
+# Example for other platforms
+# [target.'cfg(target_os = "linux")']
+# runner = "x11-runner"
+
+# [target.'cfg(target_os = "macos")']
+# runner = "cocoa-runner"
+
+# [target.'cfg(target_os = "windows")']
+# runner = "windows-runner"

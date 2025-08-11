@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "app",
+    "warp_core",
+    "warp_terminal",
+    "warp_util",
+    "ui",
+]
+
+default-members = ["app"]

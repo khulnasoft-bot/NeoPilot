@@ -1,0 +1,3128 @@
+.
+├── CONTRIBUTING.md
+├── Cargo.lock
+├── Cargo.toml
+├── README.md
+├── app
+│   ├── Cargo.toml
+│   ├── src
+│   │   ├── ai
+│   │   │   ├── agent
+│   │   │   │   ├── api
+│   │   │   │   │   ├── convert_debug.rs
+│   │   │   │   │   ├── convert_to.rs
+│   │   │   │   │   └── impl.rs
+│   │   │   │   ├── conversation.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── task.rs
+│   │   │   │   ├── todos
+│   │   │   │   │   └── mod.rs
+│   │   │   │   └── util.rs
+│   │   │   ├── agent_management
+│   │   │   │   ├── agent_management_model.rs
+│   │   │   │   └── popup.rs
+│   │   │   ├── agent_mode_homepage.rs
+│   │   │   ├── blocklist
+│   │   │   │   ├── action_model
+│   │   │   │   │   ├── execute
+│   │   │   │   │   │   ├── file_glob.rs
+│   │   │   │   │   │   ├── grep.rs
+│   │   │   │   │   │   ├── read_files.rs
+│   │   │   │   │   │   ├── request_file_edits
+│   │   │   │   │   │   │   ├── diff_application.rs
+│   │   │   │   │   │   │   └── telemetry.rs
+│   │   │   │   │   │   ├── request_file_edits.rs
+│   │   │   │   │   │   ├── retrieve_code_context.rs
+│   │   │   │   │   │   ├── search_codebase.rs
+│   │   │   │   │   │   ├── shell_command.rs
+│   │   │   │   │   │   ├── suggest_create_plan.rs
+│   │   │   │   │   │   └── suggest_new_conversation.rs
+│   │   │   │   │   ├── execute.rs
+│   │   │   │   │   └── preprocess.rs
+│   │   │   │   ├── action_model.rs
+│   │   │   │   ├── block
+│   │   │   │   │   ├── find.rs
+│   │   │   │   │   ├── keyboard_navigable_buttons.rs
+│   │   │   │   │   ├── link_detection.rs
+│   │   │   │   │   ├── model
+│   │   │   │   │   │   └── model_impl.rs
+│   │   │   │   │   ├── secret_redaction.rs
+│   │   │   │   │   ├── view_impl
+│   │   │   │   │   │   ├── output.rs
+│   │   │   │   │   │   └── todos.rs
+│   │   │   │   │   └── view_impl.rs
+│   │   │   │   ├── block.rs
+│   │   │   │   ├── controller
+│   │   │   │   │   └── response_stream.rs
+│   │   │   │   ├── controller.rs
+│   │   │   │   ├── history_model.rs
+│   │   │   │   ├── inline_action
+│   │   │   │   │   ├── code_diff_view.rs
+│   │   │   │   │   ├── plan.rs
+│   │   │   │   │   └── requested_command.rs
+│   │   │   │   ├── input_model.rs
+│   │   │   │   ├── permissions.rs
+│   │   │   │   ├── persistence.rs
+│   │   │   │   ├── prompt
+│   │   │   │   │   ├── active_conversation_selector.rs
+│   │   │   │   │   ├── conversation_manager.rs
+│   │   │   │   │   └── prompt_alert.rs
+│   │   │   │   ├── prompt.rsSuggestedAgentModeWorkflowModalapp
+│   │   │   │   │   └── src
+│   │   │   │   │       └── ai
+│   │   │   │   │           └── blocklist
+│   │   │   │   │               └── suggested_agent_mode_workflow_modal.rs
+│   │   │   │   ├── suggested_rule_modal.rs
+│   │   │   │   └── suggestion_chip_view.rs
+│   │   │   ├── codebase_indexing.rs
+│   │   │   ├── command_info
+│   │   │   │   └── mod.rs
+│   │   │   ├── execution_profiles
+│   │   │   │   ├── editor
+│   │   │   │   │   └── mod.rs
+│   │   │   │   ├── model_menu_items.rs
+│   │   │   │   └── profiles.rs
+│   │   │   ├── facts
+│   │   │   │   └── manager.rs
+│   │   │   ├── get_relevant_files
+│   │   │   │   └── controller.rs
+│   │   │   ├── inline
+│   │   │   │   ├── controller
+│   │   │   │   │   └── pending_exchange.rs
+│   │   │   │   ├── controller.rs
+│   │   │   │   └── view.rs
+│   │   │   ├── llms.rs
+│   │   │   ├── mcp
+│   │   │   │   ├── manager.rs
+│   │   │   │   └── view
+│   │   │   │       └── collection.rs
+│   │   │   ├── paths.rs
+│   │   │   ├── predict
+│   │   │   │   ├── generate_ai_input_suggestions.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── next_command_model.rs
+│   │   │   ├── request_usage_model.rs
+│   │   │   └── summarize
+│   │   │       ├── controller.rs
+│   │   │       ├── parser.rs
+│   │   │       ├── summary.rs
+│   │   │       └── view
+│   │   │           ├── banner.rs
+│   │   │           └── mod.rs
+│   │   ├── ai_assistant
+│   │   │   ├── panel.rs
+│   │   │   ├── requests.rs
+│   │   │   ├── transcript.rs
+│   │   │   └── utils.rs
+│   │   ├── app_services
+│   │   │   └── mod.rs
+│   │   ├── app_state.rs
+│   │   ├── appearance.rs
+│   │   ├── auth
+│   │   │   ├── anonymous_id.rs
+│   │   │   ├── auth_manager.rs
+│   │   │   ├── auth_state.rs
+│   │   │   ├── auth_view_body.rs
+│   │   │   ├── auth_view_modal.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── user.rs
+│   │   │   └── web_handoff.rs
+│   │   ├── autoupdate
+│   │   │   ├── changelog.rs
+│   │   │   ├── channel_versions.rs
+│   │   │   └── mod.rs
+│   │   ├── changelog_model.rs
+│   │   ├── cloud_object
+│   │   │   ├── mod.rs
+│   │   │   └── model
+│   │   │       ├── actions.rs
+│   │   │       ├── generic_string_model.rs
+│   │   │       ├── json_model.rs
+│   │   │       ├── persistence.rs
+│   │   │       └── view.rs
+│   │   ├── code
+│   │   │   ├── code_diff_model_wasm.rs
+│   │   │   └── editor_management.rs
+│   │   ├── completer
+│   │   │   └── mod.rs
+│   │   ├── context_chips
+│   │   │   ├── current_prompt.rs
+│   │   │   ├── directory_fetcher.rs
+│   │   │   ├── display.rs
+│   │   │   ├── display_chip.rs
+│   │   │   ├── display_menu.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── prompt.rs
+│   │   │   ├── prompt_snapshot.rs
+│   │   │   └── prompt_type.rs
+│   │   ├── default_terminal
+│   │   │   └── mod.rs
+│   │   ├── download_method.rs
+│   │   ├── drive
+│   │   │   ├── export.rs
+│   │   │   ├── folders
+│   │   │   │   └── mod.rs
+│   │   │   ├── import
+│   │   │   │   ├── modal_body.rs
+│   │   │   │   ├── nodes.rs
+│   │   │   │   └── queue.rs
+│   │   │   ├── index.rs
+│   │   │   ├── items
+│   │   │   │   └── item.rs
+│   │   │   ├── panel.rs
+│   │   │   ├── settings.rs
+│   │   │   ├── sharing
+│   │   │   │   └── dialog
+│   │   │   │       └── mod.rs
+│   │   │   └── workflows
+│   │   │       ├── ai_assist.rs
+│   │   │       ├── arguments.rs
+│   │   │       ├── enum_creation_dialog.rs
+│   │   │       ├── modal.rs
+│   │   │       ├── workflow_arg_selector.rs
+│   │   │       └── workflow_arg_type_helpers.rs
+│   │   ├── editor
+│   │   │   ├── accept_autosuggestion_keybinding_view.rs
+│   │   │   └── view
+│   │   │       ├── element.rs
+│   │   │       ├── mod.rs
+│   │   │       ├── model
+│   │   │       │   ├── buffer
+│   │   │       │   │   ├── deferred_ops.rs
+│   │   │       │   │   ├── mod.rs
+│   │   │       │   │   ├── subword_boundaries.rs
+│   │   │       │   │   ├── text.rs
+│   │   │       │   │   └── undo.rs
+│   │   │       │   ├── display_map
+│   │   │       │   │   ├── fold_map.rs
+│   │   │       │   │   └── mod.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── selections.rs
+│   │   │       ├── movement.rs
+│   │   │       └── snapshot.rs
+│   │   ├── env_vars
+│   │   │   ├── active_env_var_collection_data.rs
+│   │   │   ├── manager.rs
+│   │   │   ├── mod.rs
+│   │   │   └── view
+│   │   │       ├── command_dialog
+│   │   │       │   └── mod.rs
+│   │   │       ├── env_var_collection.rs
+│   │   │       ├── menus.rs
+│   │   │       └── secrets.rs
+│   │   ├── experiments
+│   │   │   └── mod.rs
+│   │   ├── http
+│   │   │   └── mod.rs
+│   │   ├── idle.rs
+│   │   ├── input_suggestions.rs
+│   │   ├── keyboard.rs
+│   │   ├── lib.rs
+│   │   ├── menu.rs
+│   │   ├── metrics_collector.rs
+│   │   ├── modal.rs
+│   │   ├── notebooks
+│   │   │   ├── active_notebook_data.rs
+│   │   │   ├── context_menu.rs
+│   │   │   ├── editor
+│   │   │   │   ├── embedded_item.rs
+│   │   │   │   ├── model.rs
+│   │   │   │   ├── notebook_command.rs
+│   │   │   │   └── view.rs
+│   │   │   ├── file
+│   │   │   │   └── mod.rs
+│   │   │   ├── link.rs
+│   │   │   ├── manager.rs
+│   │   │   ├── mod.rs
+│   │   │   └── notebook.rs
+│   │   ├── pane_group
+│   │   │   ├── mod.rs
+│   │   │   ├── pane
+│   │   │   │   ├── env_var_collection_pane.rs
+│   │   │   │   ├── terminal_pane.rs
+│   │   │   │   ├── view
+│   │   │   │   │   └── header
+│   │   │   │   │       └── mod.rs
+│   │   │   │   ├── welcome_view.rs
+│   │   │   │   └── workflow_pane.rs
+│   │   │   └── tree.rs
+│   │   ├── persistence
+│   │   │   └── mod.rs
+│   │   ├── platform
+│   │   │   └── wasm.rs
+│   │   ├── prefix.rs
+│   │   ├── projects.rs
+│   │   ├── prompt
+│   │   │   └── editor_modal.rs
+│   │   ├── quit_warning
+│   │   │   └── mod.rs
+│   │   ├── referral_theme_status.rs
+│   │   ├── resource_center
+│   │   │   ├── keybindings_page.rs
+│   │   │   ├── main_page.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── section_views
+│   │   │   │   ├── changelog_section.rs
+│   │   │   │   ├── content_section.rs
+│   │   │   │   └── feature_section.rs
+│   │   │   ├── sections.rs
+│   │   │   ├── utils.rs
+│   │   │   └── view.rs
+│   │   ├── root_view.rs
+│   │   ├── search
+│   │   │   ├── ai_context_menu
+│   │   │   │   └── view.rs
+│   │   │   ├── command_palette
+│   │   │   │   ├── conversations
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── search.rs
+│   │   │   │   ├── files
+│   │   │   │   │   └── search_item.rs
+│   │   │   │   ├── navigation
+│   │   │   │   │   ├── chunk_color.rs
+│   │   │   │   │   └── render.rs
+│   │   │   │   ├── view.rs
+│   │   │   │   ├── warp_drive
+│   │   │   │   │   └── data_source.rs
+│   │   │   │   └── zero_state.rs
+│   │   │   ├── command_search
+│   │   │   │   ├── notebooks
+│   │   │   │   │   └── notebook_search_item.rs
+│   │   │   │   ├── settings.rs
+│   │   │   │   ├── view.rs
+│   │   │   │   ├── warp_ai.rs
+│   │   │   │   └── zero_state.rs
+│   │   │   ├── data_source.rs
+│   │   │   ├── env_var_collections
+│   │   │   │   └── fuzzy_match.rs
+│   │   │   ├── external_secrets
+│   │   │   │   └── view.rs
+│   │   │   ├── mixer.rs
+│   │   │   ├── notebook_embedding
+│   │   │   │   ├── embedded_fuzzy_match.rs
+│   │   │   │   └── view.rs
+│   │   │   ├── notebooks
+│   │   │   │   └── fuzzy_match.rs
+│   │   │   ├── search_bar.rs
+│   │   │   ├── search_results_menu
+│   │   │   │   └── view.rs
+│   │   │   ├── slash_command_menu
+│   │   │   │   └── static_commands
+│   │   │   │       └── data_source.rs
+│   │   │   ├── welcome_palette
+│   │   │   │   └── view.rs
+│   │   │   └── workflows
+│   │   │       └── fuzzy_match.rs
+│   │   ├── search_bar.rs
+│   │   ├── server
+│   │   │   ├── cloud_objects
+│   │   │   │   ├── listener.rs
+│   │   │   │   └── update_manager.rs
+│   │   │   ├── experiments
+│   │   │   │   └── model.rs
+│   │   │   ├── graphql
+│   │   │   │   └── mod.rs
+│   │   │   ├── ids.rs
+│   │   │   ├── network_logging.rs
+│   │   │   ├── server_api
+│   │   │   │   ├── ai.rs
+│   │   │   │   ├── auth.rs
+│   │   │   │   ├── block.rs
+│   │   │   │   ├── client.rs
+│   │   │   │   ├── object.rs
+│   │   │   │   ├── referral.rs
+│   │   │   │   ├── team.rs
+│   │   │   │   └── workspace.rs
+│   │   │   ├── server_api.rs
+│   │   │   ├── sync_queue.rs
+│   │   │   ├── telemetry
+│   │   │   │   ├── collector.rs
+│   │   │   │   ├── context.rs
+│   │   │   │   ├── events.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── telemetry_ext.rs
+│   │   │   └── voice_transcriber.rs
+│   │   ├── settings
+│   │   │   ├── accessibility.rs
+│   │   │   ├── active_ai_persisted_data.rs
+│   │   │   ├── ai.rs
+│   │   │   ├── alias_expansion.rs
+│   │   │   ├── app_icon.rs
+│   │   │   ├── app_installation_detection.rs
+│   │   │   ├── block_visibility.rs
+│   │   │   ├── changelog.rs
+│   │   │   ├── cloud_preferences.rs
+│   │   │   ├── cloud_preferences_syncer.rs
+│   │   │   ├── code.rs
+│   │   │   ├── debug.rs
+│   │   │   ├── editor.rs
+│   │   │   ├── emacs_bindings.rs
+│   │   │   ├── font.rs
+│   │   │   ├── gpu.rs
+│   │   │   ├── initializer.rs
+│   │   │   ├── input.rs
+│   │   │   ├── input_mode.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── native_preference.rs
+│   │   │   ├── pane.rs
+│   │   │   ├── privacy.rs
+│   │   │   ├── scroll.rs
+│   │   │   ├── select.rs
+│   │   │   ├── ssh.rs
+│   │   │   ├── theme.rs
+│   │   │   └── vim_banner.rs
+│   │   ├── settings_view
+│   │   │   ├── ai_page.rs
+│   │   │   ├── appearance_page.rs
+│   │   │   ├── billing_and_usage
+│   │   │   │   └── overage_limit_modal.rs
+│   │   │   ├── billing_and_usage_page.rs
+│   │   │   ├── code_page.rs
+│   │   │   ├── execution_profile_view.rs
+│   │   │   ├── features
+│   │   │   │   └── undo_close.rs
+│   │   │   ├── features_page.rs
+│   │   │   ├── keybindings.rs
+│   │   │   ├── main_page.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── pane_manager.rs
+│   │   │   ├── privacy_page.rs
+│   │   │   ├── referrals_page.rs
+│   │   │   ├── settings_page.rs
+│   │   │   ├── show_blocks_view.rs
+│   │   │   ├── teams_page.rs
+│   │   │   └── warpify_page.rs
+│   │   ├── tab.rs
+│   │   ├── terminal
+│   │   │   ├── alias.rs
+│   │   │   ├── alt_screen
+│   │   │   │   └── alt_screen_element.rs
+│   │   │   ├── alt_screen_reporting.rs
+│   │   │   ├── block_filter.rs
+│   │   │   ├── block_list_element.rs
+│   │   │   ├── block_list_settings.rs
+│   │   │   ├── block_list_viewport.rs
+│   │   │   ├── bootstrap.rs
+│   │   │   ├── color.rs
+│   │   │   ├── dynamic_enum_suggestions.rs
+│   │   │   ├── event_listener.rs
+│   │   │   ├── find
+│   │   │   │   └── model
+│   │   │   │       ├── alt_screen.rs
+│   │   │   │       └── block_list.rs
+│   │   │   ├── general_settings.rs
+│   │   │   ├── grid_renderer.rs
+│   │   │   ├── grid_size_util.rs
+│   │   │   ├── history.rs
+│   │   │   ├── input
+│   │   │   │   └── decorations.rs
+│   │   │   ├── input.rs
+│   │   │   ├── keys_settings.rs
+│   │   │   ├── ligature_settings.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── model
+│   │   │   │   ├── ansi
+│   │   │   │   │   ├── ansi_c_decoder.rs
+│   │   │   │   │   ├── dcs_hooks.rs
+│   │   │   │   │   └── mod.rs
+│   │   │   │   ├── block.rs
+│   │   │   │   ├── blockgrid.rs
+│   │   │   │   ├── blocks
+│   │   │   │   │   └── selection.rs
+│   │   │   │   ├── blocks.rs
+│   │   │   │   ├── bootstrap.rs
+│   │   │   │   ├── escape_sequences.rs
+│   │   │   │   ├── find.rs
+│   │   │   │   ├── grid
+│   │   │   │   │   ├── ansi_handler.rs
+│   │   │   │   │   ├── displayed_output.rs
+│   │   │   │   │   ├── filtering.rs
+│   │   │   │   │   ├── grapheme_cursor.rs
+│   │   │   │   │   ├── grid_handler.rs
+│   │   │   │   │   ├── grid_storage
+│   │   │   │   │   │   └── resize.rs
+│   │   │   │   │   ├── grid_storage.rs
+│   │   │   │   │   ├── indexing.rs
+│   │   │   │   │   ├── resize.rs
+│   │   │   │   │   ├── secrets.rs
+│   │   │   │   │   └── storage.rs
+│   │   │   │   ├── header_grid.rs
+│   │   │   │   ├── image_map.rs
+│   │   │   │   ├── secrets.rs
+│   │   │   │   ├── session
+│   │   │   │   │   └── command_executor
+│   │   │   │   │       ├── in_band_command_executor.rs
+│   │   │   │   │       └── noop_command_executor.rs
+│   │   │   │   ├── session.rs
+│   │   │   │   ├── terminal_model.rs
+│   │   │   │   └── tmux
+│   │   │   │       ├── commands.rs
+│   │   │   │       ├── mod.rsapp
+│   │   │   │       │   └── src
+│   │   │   │       │       └── terminal
+│   │   │   │       │           └── model
+│   │   │   │       │               └── early_output.rs
+│   │   │   │       └── parser.rs
+│   │   │   ├── model_events.rs
+│   │   │   ├── profile_selector.rs
+│   │   │   ├── safe_mode_settings.rs
+│   │   │   ├── session_settings.rs
+│   │   │   ├── settings.rs
+│   │   │   ├── share_block_modal.rs
+│   │   │   ├── shared_session
+│   │   │   │   ├── manager.rs
+│   │   │   │   ├── network
+│   │   │   │   │   └── heartbeat.rs
+│   │   │   │   ├── presence_manager.rs
+│   │   │   │   ├── role_change_modal
+│   │   │   │   │   └── mod.rs
+│   │   │   │   ├── settings.rs
+│   │   │   │   ├── share_modal
+│   │   │   │   │   ├── body.rs
+│   │   │   │   │   └── mod.rs
+│   │   │   │   └── viewer
+│   │   │   │       ├── event_loop.rs
+│   │   │   │       ├── history_model.rs
+│   │   │   │       ├── network.rs
+│   │   │   │       └── terminal_manager.rs
+│   │   │   ├── shell.rs
+│   │   │   ├── ssh
+│   │   │   │   ├── install_tmux.rs
+│   │   │   │   ├── util.rs
+│   │   │   │   └── warpify.rs
+│   │   │   ├── static_prompt_suggestions.rs
+│   │   │   ├── terminal_size_element.rs
+│   │   │   ├── universal_developer_input.rs
+│   │   │   ├── view
+│   │   │   │   ├── ai_control_panel.rs
+│   │   │   │   ├── block_onboarding
+│   │   │   │   │   └── onboarding_agentic_suggestions_block.rs
+│   │   │   │   ├── init_project
+│   │   │   │   │   └── mod.rs
+│   │   │   │   ├── inline_banner
+│   │   │   │   │   ├── notifications_error.rs
+│   │   │   │   │   └── prompt_suggestions.rs
+│   │   │   │   ├── link_detection.rs
+│   │   │   │   ├── load_ai_conversation.rs
+│   │   │   │   ├── open_in_warp.rs
+│   │   │   │   ├── shared_session
+│   │   │   │   │   ├── adapter.rs
+│   │   │   │   │   └── view_impl.rs
+│   │   │   │   ├── shell_terminated_banner.rs
+│   │   │   │   ├── ssh_file_upload.rs
+│   │   │   │   └── tooltips.rs
+│   │   │   ├── view.rs
+│   │   │   ├── warpify
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── settings.rs
+│   │   │   └── waterfall_gap_element.rs
+│   │   ├── themes
+│   │   │   ├── mod.rs
+│   │   │   ├── theme.rs
+│   │   │   ├── theme_chooser.rs
+│   │   │   ├── theme_creator.rs
+│   │   │   └── theme_creator_body.rs
+│   │   ├── tips
+│   │   │   └── tip_view.rs
+│   │   ├── ui_components
+│   │   │   ├── avatar.rs
+│   │   │   ├── dialog.rs
+│   │   │   └── red_notification_dot.rs
+│   │   ├── undo_close
+│   │   │   ├── settings.rs
+│   │   │   └── stack.rs
+│   │   ├── uri
+│   │   │   ├── browser_url_handler.rs
+│   │   │   ├── docker.rs
+│   │   │   ├── mod.rs
+│   │   │   └── web_intent_parser.rs
+│   │   ├── user_config
+│   │   │   └── mod.rs
+│   │   ├── util
+│   │   │   ├── bindings.rs
+│   │   │   ├── links.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── sync.rs
+│   │   │   └── time_format.rs
+│   │   ├── view_components
+│   │   │   ├── agent_toast.rs
+│   │   │   ├── dismissible_toast.rs
+│   │   │   ├── find.rs
+│   │   │   └── loading_animation.rs
+│   │   ├── vim
+│   │   │   └── mod.rs
+│   │   ├── voltron.rs
+│   │   ├── wasm_nux_dialog.rs
+│   │   ├── window_settings.rs
+│   │   ├── word_block_editor.rs
+│   │   ├── workflows
+│   │   │   ├── aliases.rs
+│   │   │   ├── categories.rs
+│   │   │   ├── command_parser.rs
+│   │   │   ├── export_workflow.rs
+│   │   │   ├── info_box.rs
+│   │   │   ├── manager.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── workflow.rs
+│   │   │   ├── workflow_view
+│   │   │   │   ├── alias_argument_selector.rs
+│   │   │   │   ├── alias_bar.rs
+│   │   │   │   ├── argument_editor.rs
+│   │   │   │   └── syntax_highlightable.rs
+│   │   │   └── workflow_view.rs
+│   │   ├── workspace
+│   │   │   ├── close_session_confirmation_dialog.rs
+│   │   │   ├── global_actions.rs
+│   │   │   ├── native_modal.rs
+│   │   │   ├── one_time_modal_model.rs
+│   │   │   ├── tab_settings.rs
+│   │   │   ├── view
+│   │   │   │   └── ade_launch_modal.rs
+│   │   │   └── view.rs
+│   │   └── workspaces
+│   │       ├── gql_convert.rs
+│   │       ├── team_tester.rs
+│   │       ├── update_manager.rs
+│   │       └── user_workspaces.rs
+│   └── tests
+│       ├── notebook_manager_test.rs
+│       ├── simple_test.rs
+│       └── workflow_manager_test.rs
+├── src
+│   ├── ai
+│   │   ├── agent
+│   │   │   ├── api
+│   │   │   │   ├── convert_debug.rs
+│   │   │   │   ├── convert_to.rs
+│   │   │   │   └── impl.rs
+│   │   │   ├── conversation.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── task.rs
+│   │   │   ├── todos
+│   │   │   │   └── mod.rs
+│   │   │   └── util.rs
+│   │   ├── agent_management
+│   │   │   ├── agent_management_model.rs
+│   │   │   └── popup.rs
+│   │   ├── agent_mode_homepage.rs
+│   │   ├── blocklist
+│   │   │   ├── action_model
+│   │   │   │   ├── execute
+│   │   │   │   │   ├── file_glob.rs
+│   │   │   │   │   ├── grep.rs
+│   │   │   │   │   ├── read_files.rs
+│   │   │   │   │   ├── request_file_edits
+│   │   │   │   │   │   ├── diff_application.rs
+│   │   │   │   │   │   └── telemetry.rs
+│   │   │   │   │   ├── request_file_edits.rs
+│   │   │   │   │   ├── retrieve_code_context.rs
+│   │   │   │   │   ├── search_codebase.rs
+│   │   │   │   │   ├── shell_command.rs
+│   │   │   │   │   ├── suggest_create_plan.rs
+│   │   │   │   │   └── suggest_new_conversation.rs
+│   │   │   │   ├── execute.rs
+│   │   │   │   └── preprocess.rs
+│   │   │   ├── action_model.rs
+│   │   │   ├── block
+│   │   │   │   ├── find.rs
+│   │   │   │   ├── keyboard_navigable_buttons.rs
+│   │   │   │   ├── link_detection.rs
+│   │   │   │   ├── model
+│   │   │   │   │   └── model_impl.rs
+│   │   │   │   ├── secret_redaction.rs
+│   │   │   │   ├── view_impl
+│   │   │   │   │   ├── output.rs
+│   │   │   │   │   └── todos.rs
+│   │   │   │   └── view_impl.rs
+│   │   │   ├── block.rs
+│   │   │   ├── controller
+│   │   │   │   └── response_stream.rs
+│   │   │   ├── controller.rs
+│   │   │   ├── history_model.rs
+│   │   │   ├── inline_action
+│   │   │   │   ├── code_diff_view.rs
+│   │   │   │   ├── plan.rs
+│   │   │   │   └── requested_command.rs
+│   │   │   ├── input_model.rs
+│   │   │   ├── permissions.rs
+│   │   │   ├── persistence.rs
+│   │   │   ├── prompt
+│   │   │   │   ├── active_conversation_selector.rs
+│   │   │   │   ├── conversation_manager.rs
+│   │   │   │   └── prompt_alert.rs
+│   │   │   ├── prompt.rsSuggestedAgentModeWorkflowModalapp
+│   │   │   │   └── src
+│   │   │   │       └── ai
+│   │   │   │           └── blocklist
+│   │   │   │               └── suggested_agent_mode_workflow_modal.rs
+│   │   │   ├── suggested_rule_modal.rs
+│   │   │   └── suggestion_chip_view.rs
+│   │   ├── codebase_indexing.rs
+│   │   ├── command_info
+│   │   │   └── mod.rs
+│   │   ├── execution_profiles
+│   │   │   ├── editor
+│   │   │   │   └── mod.rs
+│   │   │   ├── model_menu_items.rs
+│   │   │   └── profiles.rs
+│   │   ├── facts
+│   │   │   └── manager.rs
+│   │   ├── get_relevant_files
+│   │   │   └── controller.rs
+│   │   ├── inline
+│   │   │   ├── controller
+│   │   │   │   └── pending_exchange.rs
+│   │   │   ├── controller.rs
+│   │   │   └── view.rs
+│   │   ├── llms.rs
+│   │   ├── mcp
+│   │   │   ├── manager.rs
+│   │   │   └── view
+│   │   │       └── collection.rs
+│   │   ├── paths.rs
+│   │   ├── predict
+│   │   │   ├── generate_ai_input_suggestions.rs
+│   │   │   └── next_command_model.rs
+│   │   ├── request_usage_model.rs
+│   │   └── summarize
+│   │       ├── controller.rs
+│   │       ├── parser.rs
+│   │       ├── summary.rs
+│   │       └── view
+│   │           ├── banner.rs
+│   │           └── mod.rs
+│   ├── ai_assistant
+│   │   ├── panel.rs
+│   │   ├── requests.rs
+│   │   ├── transcript.rs
+│   │   └── utils.rs
+│   ├── api
+│   │   ├── adapter.rs
+│   │   ├── buffer.rs
+│   │   ├── instance.rs
+│   │   ├── queue.rs
+│   │   ├── subscriptions
+│   │   │   └── mod.rs
+│   │   └── surface.rs
+│   ├── app_focus_telemetry.rs
+│   ├── app_services
+│   │   └── mod.rs
+│   ├── app_state.rs
+│   ├── appearance.rs
+│   ├── arena
+│   │   ├── handle.rs
+│   │   ├── handlevec.rs
+│   │   ├── mod.rs
+│   │   ├── range.rs
+│   │   └── unique_arena.rs
+│   ├── assets
+│   │   └── asset_cache.rs
+│   ├── assets.rs
+│   ├── async
+│   │   ├── mod.rs
+│   │   └── wasm
+│   │       └── mod.rs
+│   ├── attrs.rs
+│   ├── auth
+│   │   ├── anonymous_id.rs
+│   │   ├── auth_manager.rs
+│   │   ├── auth_state.rs
+│   │   ├── auth_view_body.rs
+│   │   ├── auth_view_modal.rs
+│   │   ├── mod.rs
+│   │   ├── user.rs
+│   │   └── web_handoff.rs
+│   ├── autoupdate
+│   │   ├── changelog.rs
+│   │   ├── channel_versions.rs
+│   │   └── mod.rs
+│   ├── back
+│   │   ├── continue_forward.rs
+│   │   ├── glsl
+│   │   │   ├── features.rs
+│   │   │   └── mod.rs
+│   │   ├── mod.rs
+│   │   └── pipeline_constants.rs
+│   ├── backend
+│   │   └── wgpu_core.rs
+│   ├── backtrace.rs
+│   ├── bidi_para.rs
+│   ├── binding_model.rs
+│   ├── block.rs
+│   ├── boxed
+│   │   ├── convert.rs
+│   │   └── iter.rs
+│   ├── boxed.rs
+│   ├── cell
+│   │   └── once.rs
+│   ├── cell.rs
+│   ├── changelog_model.rs
+│   ├── channel
+│   │   └── state.rs
+│   ├── char
+│   │   └── methods.rs
+│   ├── clipboard_utils.rs
+│   ├── cloud_object
+│   │   ├── mod.rs
+│   │   └── model
+│   │       ├── actions.rs
+│   │       ├── generic_string_model.rs
+│   │       ├── json_model.rs
+│   │       ├── persistence.rs
+│   │       └── view.rs
+│   ├── cmp.rs
+│   ├── code
+│   │   ├── code_diff_model_wasm.rs
+│   │   └── editor_management.rs
+│   ├── collections
+│   │   ├── binary_heap
+│   │   │   └── mod.rs
+│   │   ├── btree
+│   │   │   ├── map
+│   │   │   │   └── entry.rs
+│   │   │   ├── map.rs
+│   │   │   ├── navigate.rs
+│   │   │   ├── node.rs
+│   │   │   └── search.rs
+│   │   └── vec_deque
+│   │       └── mod.rs
+│   ├── command
+│   │   ├── allocator.rs
+│   │   ├── bind.rs
+│   │   ├── bundle.rs
+│   │   ├── clear.rs
+│   │   ├── memory_init.rs
+│   │   ├── mod.rs
+│   │   ├── query.rs
+│   │   ├── ray_tracing.rs
+│   │   ├── render.rs
+│   │   └── transfer.rs
+│   ├── compact
+│   │   ├── expressions.rs
+│   │   ├── functions.rs
+│   │   ├── handle_set_map.rs
+│   │   ├── mod.rs
+│   │   └── statements.rs
+│   ├── completer
+│   │   ├── coalesce.rs
+│   │   ├── describe.rs
+│   │   ├── engine
+│   │   │   ├── argument
+│   │   │   ├── command.rs
+│   │   │   ├── flag
+│   │   │   ├── mod.rs
+│   │   │   ├── path.rs
+│   │   │   └── variable.rs
+│   │   ├── mod.rs
+│   │   └── suggest
+│   │       ├── alias.rs
+│   │       └── mod.rs
+│   ├── content
+│   │   ├── buffer.rs
+│   │   ├── core.rs
+│   │   ├── cursor.rs
+│   │   ├── edit.rs
+│   │   ├── find.rs
+│   │   ├── markdown.rs
+│   │   ├── outline.rs
+│   │   ├── selection.rs
+│   │   ├── text.rs
+│   │   └── undo.rs
+│   ├── context_chips
+│   │   ├── current_prompt.rs
+│   │   ├── directory_fetcher.rs
+│   │   ├── display.rs
+│   │   ├── display_chip.rs
+│   │   ├── display_menu.rs
+│   │   ├── mod.rs
+│   │   ├── prompt.rs
+│   │   ├── prompt_snapshot.rs
+│   │   └── prompt_type.rs
+│   ├── context_flag.rs
+│   ├── core
+│   │   ├── app.rs
+│   │   ├── mod.rs
+│   │   ├── model
+│   │   │   └── context.rs
+│   │   └── view
+│   │       └── context.rs
+│   ├── cursor.rs
+│   ├── debug
+│   │   └── view_tree_debug_view.rs
+│   ├── default_terminal
+│   │   └── mod.rs
+│   ├── device
+│   │   ├── bgl.rs
+│   │   ├── global.rs
+│   │   ├── life.rs
+│   │   ├── mod.rs
+│   │   ├── queue.rs
+│   │   └── resource.rs
+│   ├── diagnostic_filter.rs
+│   ├── dlmalloc.rs
+│   ├── download_method.rs
+│   ├── drive
+│   │   ├── export.rs
+│   │   ├── folders
+│   │   │   └── mod.rs
+│   │   ├── import
+│   │   │   ├── modal_body.rs
+│   │   │   ├── nodes.rs
+│   │   │   └── queue.rs
+│   │   ├── index.rs
+│   │   ├── items
+│   │   │   └── item.rs
+│   │   ├── panel.rs
+│   │   ├── settings.rs
+│   │   ├── sharing
+│   │   │   └── dialog
+│   │   │       └── mod.rs
+│   │   └── workflows
+│   │       ├── ai_assist.rs
+│   │       ├── arguments.rs
+│   │       ├── enum_creation_dialog.rs
+│   │       ├── modal.rs
+│   │       ├── workflow_arg_selector.rs
+│   │       └── workflow_arg_type_helpers.rs
+│   ├── dynamic
+│   │   └── mod.rs
+│   ├── editor
+│   │   ├── accept_autosuggestion_keybinding_view.rs
+│   │   └── view
+│   │       ├── element.rs
+│   │       ├── mod.rs
+│   │       ├── model
+│   │       │   ├── buffer
+│   │       │   │   ├── deferred_ops.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── subword_boundaries.rs
+│   │       │   │   ├── text.rs
+│   │       │   │   └── undo.rs
+│   │       │   ├── display_map
+│   │       │   │   ├── fold_map.rs
+│   │       │   │   └── mod.rs
+│   │       │   ├── mod.rs
+│   │       │   └── selections.rs
+│   │       ├── movement.rs
+│   │       └── snapshot.rs
+│   ├── elements
+│   │   ├── align.rs
+│   │   ├── clipped.rs
+│   │   ├── clipped_scrollable.rs
+│   │   ├── container.rs
+│   │   ├── dismiss.rs
+│   │   ├── drag
+│   │   │   └── draggable.rs
+│   │   ├── event_handler.rs
+│   │   ├── flex
+│   │   │   ├── mod.rs
+│   │   │   └── wrap.rs
+│   │   ├── formatted_text_element.rs
+│   │   ├── hoverable.rs
+│   │   ├── icon.rs
+│   │   ├── image.rs
+│   │   ├── list.rs
+│   │   ├── min_size.rs
+│   │   ├── new_scrollable
+│   │   │   ├── dual_axis_config.rs
+│   │   │   ├── mod.rs
+│   │   │   └── single_axis_config.rs
+│   │   ├── rect.rs
+│   │   ├── resizable.rs
+│   │   ├── scrollable.rs
+│   │   ├── selectable_area.rs
+│   │   ├── stack
+│   │   │   ├── mod.rs
+│   │   │   └── save_position.rs
+│   │   ├── text.rs
+│   │   └── uniform_list.rs
+│   ├── emitter.rs
+│   ├── env.rs
+│   ├── env_vars
+│   │   ├── active_env_var_collection_data.rs
+│   │   ├── manager.rs
+│   │   ├── mod.rs
+│   │   └── view
+│   │       ├── command_dialog
+│   │       │   └── mod.rs
+│   │       ├── env_var_collection.rs
+│   │       ├── menus.rs
+│   │       └── secrets.rs
+│   ├── error.rs
+│   ├── event_loop.rs
+│   ├── experiments
+│   │   └── mod.rs
+│   ├── features.rs
+│   ├── ffi
+│   │   ├── c_str.rs
+│   │   └── os_str.rs
+│   ├── fmt
+│   │   ├── builders.rs
+│   │   ├── mod.rs
+│   │   └── num.rs
+│   ├── fmt.rs
+│   ├── font
+│   │   ├── fallback
+│   │   │   └── mod.rs
+│   │   ├── mod.rs
+│   │   └── system.rs
+│   ├── fonts
+│   │   └── external_fallback.rs
+│   ├── fonts.rs
+│   ├── front
+│   │   ├── mod.rs
+│   │   └── wgsl
+│   │       ├── error.rs
+│   │       ├── index.rs
+│   │       ├── lower
+│   │       │   ├── construction.rs
+│   │       │   ├── conversion.rs
+│   │       │   └── mod.rs
+│   │       ├── parse
+│   │       │   ├── directive.rs
+│   │       │   ├── mod.rs
+│   │       │   └── number.rs
+│   │       └── to_wgsl.rs
+│   ├── future
+│   │   └── ready.rs
+│   ├── generators
+│   │   ├── README.md
+│   │   ├── apt.rs
+│   │   ├── bazel.rs
+│   │   ├── bosh.rs
+│   │   ├── cargo.rs
+│   │   ├── dnf.rs
+│   │   ├── docker.rs
+│   │   ├── firebase.rs
+│   │   ├── flutter.rs
+│   │   ├── gh.rs
+│   │   ├── git.rs
+│   │   ├── heroku.rs
+│   │   ├── kill.rs
+│   │   ├── kubectl.rs
+│   │   ├── make.rs
+│   │   ├── ng.rs
+│   │   ├── npm.rs
+│   │   ├── nx.rs
+│   │   ├── pacman.rs
+│   │   ├── phpunit_watcher.rs
+│   │   ├── pyenv.rs
+│   │   └── react_native.rs
+│   ├── gles
+│   │   ├── adapter.rs
+│   │   ├── command.rs
+│   │   ├── conv.rs
+│   │   ├── device.rs
+│   │   ├── mod.rs
+│   │   ├── queue.rs
+│   │   └── web.rs
+│   ├── global.rs
+│   ├── heuristic_classifier
+│   │   └── mod.rs
+│   ├── html_parser.rs
+│   ├── http
+│   │   └── mod.rs
+│   ├── id.rs
+│   ├── identity.rs
+│   ├── idle.rs
+│   ├── image_cache.rs
+│   ├── index
+│   │   └── full_source_code_embedding
+│   │       ├── codebase_index.rs
+│   │       ├── manager.rs
+│   │       └── sync_client.rs
+│   ├── index.crates.io-1949cf8c6b5b557f
+│   │   ├── addr-0.15.6
+│   │   │   └── src
+│   │   │       └── domain.rs
+│   │   ├── aho-corasick-1.1.3
+│   │   │   └── src
+│   │   │       ├── ahocorasick.rs
+│   │   │       ├── automaton.rs
+│   │   │       ├── dfa.rs
+│   │   │       │   └── home
+│   │   │       │       └── runner
+│   │   │       ├── nfa
+│   │   │       │   └── noncontiguous.rs
+│   │   │       ├── packed
+│   │   │       │   ├── api.rs
+│   │   │       │   ├── pattern.rs
+│   │   │       │   └── rabinkarp.rs
+│   │   │       └── util
+│   │   │           ├── alphabet.rs
+│   │   │           ├── debug.rs
+│   │   │           ├── prefilter.rs
+│   │   │           ├── primitives.rs
+│   │   │           ├── remapper.rs
+│   │   │           └── search.rs
+│   │   ├── anyhow-1.0.79
+│   │   │   └── src
+│   │   │       └── error.rs
+│   │   ├── arrayvec-0.7.6
+│   │   │   └── src
+│   │   │       └── arrayvec.rs
+│   │   ├── async-broadcast-0.7.2
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── async-channel-2.3.1
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── async-fs-2.1.2
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── async-stream-0.3.5
+│   │   │   └── src
+│   │   │       └── yielder.rs
+│   │   ├── async-task-4.7.1
+│   │   │   └── src
+│   │   │       ├── task.rs
+│   │   │       └── utils.rs
+│   │   ├── atomic-waker-1.1.2
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── base64-0.21.7
+│   │   │   └── src
+│   │   │       ├── encode.rs
+│   │   │       └── engine
+│   │   │           ├── general_purpose
+│   │   │           │   ├── decode.rs
+│   │   │           │   ├── decode_suffix.rs
+│   │   │           │   └── mod.rs
+│   │   │           └── mod.rs
+│   │   ├── base64-0.22.1
+│   │   │   └── src
+│   │   │       ├── encode.rs
+│   │   │       ├── engine
+│   │   │       │   └── general_purpose
+│   │   │       │       └── mod.rs
+│   │   │       └── write
+│   │   │           └── encoder.rs
+│   │   ├── bimap-0.6.3
+│   │   │   └── src
+│   │   │       └── hash.rs
+│   │   ├── bit-set-0.5.3
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── bit-set-0.8.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── bit-vec-0.6.3
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── bit-vec-0.8.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── blocking-1.6.2
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── bounded-vec-deque-0.1.1
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── byte-unit-5.1.4
+│   │   │   └── src
+│   │   │       └── byte
+│   │   │           └── adjusted
+│   │   │               └── mod.rs
+│   │   ├── bytemuck-1.21.0
+│   │   │   └── src
+│   │   │       └── internal.rs
+│   │   ├── byteorder-lite-0.1.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── bytes-1.10.1
+│   │   │   └── src
+│   │   │       ├── buf
+│   │   │       │   └── take.rs
+│   │   │       ├── bytes.rs
+│   │   │       ├── bytes_mut.rs
+│   │   │       └── lib.rs
+│   │   ├── chrono-0.4.40
+│   │   │   └── src
+│   │   │       ├── date.rs
+│   │   │       ├── datetime
+│   │   │       │   └── mod.rs
+│   │   │       ├── format
+│   │   │       │   ├── formatting.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── parse.rs
+│   │   │       │   ├── scan.rs
+│   │   │       │   └── strftime.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── naive
+│   │   │       │   ├── date
+│   │   │       │   │   └── mod.rs
+│   │   │       │   ├── datetime
+│   │   │       │   │   └── mod.rs
+│   │   │       │   └── internals.rs
+│   │   │       └── offset
+│   │   │           └── local
+│   │   │               └── mod.rs
+│   │   ├── codespan-reporting-0.11.1
+│   │   │   └── src
+│   │   │       ├── files.rs
+│   │   │       │   └── home
+│   │   │       │       └── runner
+│   │   │       └── term
+│   │   │           └── renderer.rs
+│   │   ├── color_quant-1.1.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── concurrent-queue-2.5.0
+│   │   │   └── src
+│   │   │       ├── bounded.rs
+│   │   │       └── unbounded.rs
+│   │   ├── counter-0.6.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── cpal-0.15.3
+│   │   │   └── src
+│   │   │       └── host
+│   │   │           └── null
+│   │   │               └── mod.rs
+│   │   ├── crc32fast-1.3.2
+│   │   │   └── src
+│   │   │       └── baseline.rs
+│   │   ├── crossbeam-deque-0.8.3
+│   │   │   └── src
+│   │   │       └── deque.rs
+│   │   ├── crossbeam-epoch-0.9.15
+│   │   │   └── src
+│   │   │       ├── atomic.rs
+│   │   │       ├── internal.rs
+│   │   │       └── sync
+│   │   │           ├── list.rs
+│   │   │           └── once_lock.rs
+│   │   ├── cynic-3.8.0
+│   │   │   └── src
+│   │   │       ├── operation
+│   │   │       │   └── mod.rsLeaveObjectTrashObjectUntrashObjectUser
+│   │   │       │       └── home
+│   │   │       │           └── runner
+│   │   │       │               └── work
+│   │   │       │                   └── warp-internal
+│   │   │       │                       └── warp-internal
+│   │   │       │                           └── ui
+│   │   │       │                               └── src
+│   │   │       │                                   └── elements
+│   │   │       │                                       └── uniform_list.rs
+│   │   │       ├── private
+│   │   │       │   ├── content.rs
+│   │   │       │   └── inline_fragment_de.rs
+│   │   │       └── queries
+│   │   │           ├── builders.rs
+│   │   │           └── indent.rs
+│   │   ├── dashmap-4.0.2
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── mapref
+│   │   │           └── entry.rs
+│   │   ├── dashmap-6.0.1
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── lock.rs
+│   │   ├── data-url-0.3.1
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── mime.rs
+│   │   ├── difflib-0.4.0
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── sequencematcher.rs
+│   │   ├── event-listener-5.4.0
+│   │   │   └── src
+│   │   │       ├── intrusive.rs
+│   │   │       └── lib.rs
+│   │   ├── eventsource-stream-0.2.3
+│   │   │   └── src
+│   │   │       ├── event_stream.rs
+│   │   │       └── utf8_stream.rs
+│   │   ├── fancy-regex-0.11.0
+│   │   │   └── src
+│   │   │       ├── analyze.rs
+│   │   │       ├── compile.rs
+│   │   │       ├── error.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── parse.rs
+│   │   │       └── vm.rs
+│   │   ├── fdeflate-0.3.0
+│   │   │   └── src
+│   │   │       ├── compress.rs
+│   │   │       └── decompress.rs
+│   │   ├── flate2-1.1.1
+│   │   │   └── src
+│   │   │       ├── bufreader.rs
+│   │   │       ├── crc.rs
+│   │   │       ├── gz
+│   │   │       │   └── mod.rs
+│   │   │       ├── mem.rs
+│   │   │       └── zio.rs
+│   │   ├── fontdb-0.23.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── form_urlencoded-1.2.1
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── futures-channel-0.3.31
+│   │   │   └── src
+│   │   │       ├── mpsc
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── queue.rs
+│   │   │       └── oneshot.rs
+│   │   ├── futures-core-0.3.31
+│   │   │   └── src
+│   │   │       └── task
+│   │   │           └── __internal
+│   │   │               └── atomic_waker.rs
+│   │   ├── futures-lite-2.3.0
+│   │   │   └── src
+│   │   │       └── stream.rs
+│   │   ├── futures-util-0.3.31
+│   │   │   └── src
+│   │   │       ├── future
+│   │   │       │   ├── future
+│   │   │       │   │   ├── map.rs
+│   │   │       │   │   ├── remote_handle.rs
+│   │   │       │   │   └── shared.rs
+│   │   │       │   ├── join_all.rs
+│   │   │       │   ├── maybe_done.rs
+│   │   │       │   └── ready.rs
+│   │   │       ├── io
+│   │   │       │   └── write_all.rs
+│   │   │       ├── lock
+│   │   │       │   ├── bilock.rs
+│   │   │       │   └── mutex.rs
+│   │   │       ├── sink
+│   │   │       │   ├── feed.rs
+│   │   │       │   └── with.rs
+│   │   │       └── stream
+│   │   │           └── futures_unordered
+│   │   │               ├── abort.rs
+│   │   │               └── mod.rs
+│   │   ├── fuzzy-matcher-0.3.7
+│   │   │   └── src
+│   │   │       ├── skim.rs
+│   │   │       └── util.rs
+│   │   ├── gif-0.13.1
+│   │   │   └── src
+│   │   │       ├── common.rs
+│   │   │       ├── encoder.rs
+│   │   │       └── reader
+│   │   │           ├── converter.rs
+│   │   │           ├── decoder.rs
+│   │   │           └── mod.rs
+│   │   ├── gloo-storage-0.3.0
+│   │   │   └── src
+│   │   │       └── errors.rs
+│   │   ├── glow-0.16.0
+│   │   │   └── src
+│   │   │       ├── version.rs
+│   │   │       └── web_sys.rs
+│   │   ├── graphql-ws-client-0.11.1
+│   │   │   └── src
+│   │   │       ├── next
+│   │   │       │   ├── actor.rs
+│   │   │       │   ├── builder.rs
+│   │   │       │   ├── connection.rs
+│   │   │       │   ├── keepalive.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── production_future.rs
+│   │   │       │   └── stream.rs
+│   │   │       └── ws_stream_wasm.rs
+│   │   ├── hashbrown-0.12.3
+│   │   │   └── src
+│   │   │       └── raw
+│   │   │           └── mod.rs
+│   │   ├── hashbrown-0.14.1
+│   │   │   └── src
+│   │   │       └── raw
+│   │   │           └── mod.rs
+│   │   ├── hashbrown-0.15.2
+│   │   │   └── src
+│   │   │       └── raw
+│   │   │           └── mod.rs
+│   │   ├── hex-0.4.3
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── histogram-0.6.9
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── html5ever-0.35.0
+│   │   │   └── src
+│   │   │       ├── driver.rs
+│   │   │       ├── serialize
+│   │   │       │   └── mod.rs
+│   │   │       ├── tokenizer
+│   │   │       │   ├── char_ref
+│   │   │       │   │   └── mod.rs
+│   │   │       │   └── mod.rs
+│   │   │       └── tree_builder
+│   │   │           ├── mod.rs
+│   │   │           └── rules.rs
+│   │   ├── http-1.1.0
+│   │   │   └── src
+│   │   │       ├── header
+│   │   │       │   ├── map.rs
+│   │   │       │   └── value.rs
+│   │   │       └── method.rs
+│   │   ├── icu_collections-1.5.0
+│   │   │   └── src
+│   │   │       └── codepointtrie
+│   │   │           └── cptrie.rs
+│   │   ├── icu_normalizer-1.5.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── idna-1.0.3
+│   │   │   └── src
+│   │   │       ├── punycode.rs
+│   │   │       └── uts46.rs
+│   │   ├── image-0.25.4
+│   │   │   └── src
+│   │   │       ├── buffer.rs
+│   │   │       ├── codecs
+│   │   │       │   ├── gif.rs
+│   │   │       │   ├── jpeg
+│   │   │       │   │   ├── decoder.rs
+│   │   │       │   │   └── encoder.rs
+│   │   │       │   ├── png.rs
+│   │   │       │   └── webp
+│   │   │       │       └── decoder.rs
+│   │   │       ├── color.rs
+│   │   │       ├── dynimage.rs
+│   │   │       ├── image.rs
+│   │   │       ├── image_reader
+│   │   │       │   └── free_functions.rs
+│   │   │       └── imageops
+│   │   │           └── sample.rs
+│   │   ├── image-webp-0.2.1
+│   │   │   └── src
+│   │   │       ├── decoder.rs
+│   │   │       ├── encoder.rs
+│   │   │       ├── extended.rs
+│   │   │       ├── huffman.rs
+│   │   │       ├── loop_filter.rs
+│   │   │       ├── lossless.rs
+│   │   │       ├── lossless_transform.rs
+│   │   │       ├── vp8.rs
+│   │   │       └── vp8_arithmetic_decoder.rs
+│   │   ├── imagesize-0.13.0
+│   │   │   └── src
+│   │   │       ├── formats
+│   │   │       │   ├── ico.rs
+│   │   │       │   └── jxl.rs
+│   │   │       └── util.rs
+│   │   ├── indexmap-1.9.3
+│   │   │   └── src
+│   │   │       ├── map
+│   │   │       │   └── core.rs
+│   │   │       └── map.rs
+│   │   ├── indexmap-2.9.0
+│   │   │   └── src
+│   │   │       ├── map
+│   │   │       │   ├── core
+│   │   │       │   │   └── entry.rs
+│   │   │       │   └── core.rs
+│   │   │       ├── map.rs
+│   │   │       └── set.rs
+│   │   ├── instant-0.1.12
+│   │   │   └── src
+│   │   │       └── wasm.rs
+│   │   ├── itertools-0.10.5
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── itertools-0.14.0
+│   │   │   └── src
+│   │   │       ├── format.rs
+│   │   │       ├── k_smallest.rs
+│   │   │       ├── lib.rs
+│   │   │       └── peek_nth.rs
+│   │   ├── js-sys-0.3.77
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── lasso-0.7.3
+│   │   │   └── src
+│   │   │       └── threaded_rodeo.rs
+│   │   ├── lazy_static-1.4.0
+│   │   │   └── src
+│   │   │       └── inline_lazy.rs
+│   │   ├── lz4_flex-0.11.1
+│   │   │   └── src
+│   │   │       ├── block
+│   │   │       │   └── decompress_safe.rs
+│   │   │       └── sink.rs
+│   │   ├── markup5ever-0.35.0
+│   │   │   └── util
+│   │   │       └── buffer_queue.rs
+│   │   ├── memchr-2.7.4
+│   │   │   └── src
+│   │   │       ├── arch
+│   │   │       │   └── all
+│   │   │       │       ├── packedpair
+│   │   │       │       │   └── mod.rs
+│   │   │       │       └── twoway.rs
+│   │   │       └── memmem
+│   │   │           └── searcher.rs
+│   │   ├── memo-map-0.3.2
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── mime-0.3.17
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── parse.rs
+│   │   ├── mime_guess-2.0.4
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── miniz_oxide-0.8.8
+│   │   │   └── src
+│   │   │       ├── deflate
+│   │   │       │   ├── buffer.rs
+│   │   │       │   ├── core.rs
+│   │   │       │   ├── stored.rs
+│   │   │       │   └── stream.rs
+│   │   │       └── inflate
+│   │   │           ├── core.rs
+│   │   │           ├── output_buffer.rs
+│   │   │           └── stream.rs
+│   │   ├── nom-7.1.3
+│   │   │   └── src
+│   │   │       ├── multi
+│   │   │       │   └── mod.rs
+│   │   │       └── traits.rs
+│   │   ├── once_cell-1.20.2
+│   │   │   └── src
+│   │   │       ├── imp_std.rs
+│   │   │       └── lib.rs
+│   │   ├── os_info-3.7.0
+│   │   │   └── src
+│   │   │       └── unknown
+│   │   │           └── mod.rs
+│   │   ├── parking-2.2.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── parking_lot-0.12.1
+│   │   │   └── src
+│   │   │       └── raw_rwlock.rs
+│   │   ├── parking_lot_core-0.9.9
+│   │   │   └── src
+│   │   │       ├── parking_lot.rs
+│   │   │       └── thread_parker
+│   │   │           └── wasm.rs
+│   │   ├── percent-encoding-2.3.1
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── pharos-0.5.3
+│   │   │   └── src
+│   │   │       ├── events.rs
+│   │   │       ├── pharos.rs
+│   │   │       └── shared_pharos.rs
+│   │   ├── piper-0.2.1
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── plist-1.5.1
+│   │   │   └── src
+│   │   │       ├── date.rs
+│   │   │       ├── de.rs
+│   │   │       └── stream
+│   │   │           ├── binary_reader.rs
+│   │   │           └── mod.rs
+│   │   │               └── home
+│   │   │                   └── runner
+│   │   ├── png-0.17.10
+│   │   │   └── src
+│   │   │       ├── common.rs
+│   │   │       ├── decoder
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── stream.rs
+│   │   │       │   └── zlib.rs
+│   │   │       ├── encoder.rs
+│   │   │       ├── filter.rs
+│   │   │       ├── text_metadata.rs
+│   │   │       └── utils.rs
+│   │   ├── priority-queue-2.5.0
+│   │   │   └── src
+│   │   │       ├── priority_queue
+│   │   │       │   └── mod.rs
+│   │   │       └── store.rs
+│   │   ├── prost-0.13.5
+│   │   │   └── src
+│   │   │       ├── encoding
+│   │   │       │   └── varint.rs
+│   │   │       ├── encoding.rs
+│   │   │       └── error.rs
+│   │   ├── prost-reflect-0.15.3
+│   │   │   └── src
+│   │   │       ├── descriptor
+│   │   │       │   ├── api.rs
+│   │   │       │   ├── build
+│   │   │       │   │   ├── mod.rs
+│   │   │       │   │   ├── names.rs
+│   │   │       │   │   ├── options.rs
+│   │   │       │   │   ├── resolve.rs
+│   │   │       │   │   └── visit.rs
+│   │   │       │   ├── error.rs
+│   │   │       │   ├── global.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── types.rs
+│   │   │       └── dynamic
+│   │   │           ├── fields.rs
+│   │   │           ├── message.rs
+│   │   │           ├── mod.rs
+│   │   │           ├── text_format
+│   │   │           │   └── format.rs
+│   │   │           └── unknown.rs
+│   │   ├── prost-types-0.13.5
+│   │   │   └── src
+│   │   │       └── protobuf.rs
+│   │   ├── quick-xml-0.30.0
+│   │   │   └── src
+│   │   │       ├── escapei.rs
+│   │   │       ├── events
+│   │   │       │   └── mod.rs
+│   │   │       ├── name.rs
+│   │   │       └── reader
+│   │   │           ├── mod.rs
+│   │   │           │   └── home
+│   │   │           │       └── runner
+│   │   │           └── parser.rs
+│   │   ├── rand-0.8.5
+│   │   │   └── src
+│   │   │       └── rngs
+│   │   │           └── thread.rs
+│   │   ├── rangemap-1.4.0
+│   │   │   └── src
+│   │   │       ├── inclusive_map.rs
+│   │   │       └── map.rs
+│   │   ├── rayon-1.10.0
+│   │   │   └── src
+│   │   │       ├── iter
+│   │   │       │   ├── collect
+│   │   │       │   │   ├── consumer.rs
+│   │   │       │   │   └── mod.rs
+│   │   │       │   ├── extend.rs
+│   │   │       │   └── unzip.rs
+│   │   │       ├── slice
+│   │   │       │   └── mod.rs
+│   │   │       └── vec.rs
+│   │   ├── rayon-core-1.12.1
+│   │   │   └── src
+│   │   │       ├── job.rs
+│   │   │       ├── registry.rs
+│   │   │       └── sleep
+│   │   │           └── mod.rs
+│   │   ├── read-fonts-0.19.3
+│   │   │   ├── generated
+│   │   │   │   ├── font.rs
+│   │   │   │   ├── generated_cff.rs
+│   │   │   │   ├── generated_cff2.rs
+│   │   │   │   ├── generated_cvar.rs
+│   │   │   │   ├── generated_glyf.rs
+│   │   │   │   ├── generated_gvar.rs
+│   │   │   │   ├── generated_head.rs
+│   │   │   │   ├── generated_hmtx.rs
+│   │   │   │   ├── generated_hvar.rs
+│   │   │   │   ├── generated_maxp.rs
+│   │   │   │   ├── generated_postscript.rs
+│   │   │   │   └── generated_variations.rs
+│   │   │   └── src
+│   │   │       └── tables
+│   │   │           ├── glyf.rs
+│   │   │           ├── postscript
+│   │   │           │   ├── dict.rs
+│   │   │           │   └── stack.rs
+│   │   │           └── variations.rs
+│   │   ├── regex-1.11.1
+│   │   │   └── src
+│   │   │       ├── builders.rs
+│   │   │       └── regex
+│   │   │           ├── bytes.rs
+│   │   │           └── string.rs
+│   │   ├── regex-automata-0.4.9
+│   │   │   └── src
+│   │   │       ├── dfa
+│   │   │       │   ├── accel.rs
+│   │   │       │   ├── dense.rs
+│   │   │       │   ├── determinize.rs
+│   │   │       │   ├── minimize.rs
+│   │   │       │   ├── onepass.rs
+│   │   │       │   ├── regex.rs
+│   │   │       │   ├── remapper.rs
+│   │   │       │   └── search.rs
+│   │   │       ├── hybrid
+│   │   │       │   ├── dfa.rs
+│   │   │       │   ├── regex.rs
+│   │   │       │   └── search.rs
+│   │   │       ├── meta
+│   │   │       │   ├── error.rs
+│   │   │       │   ├── limited.rs
+│   │   │       │   ├── literal.rs
+│   │   │       │   ├── regex.rs
+│   │   │       │   ├── reverse_inner.rs
+│   │   │       │   ├── stopat.rs
+│   │   │       │   ├── strategy.rs
+│   │   │       │   └── wrappers.rs
+│   │   │       ├── nfa
+│   │   │       │   └── thompson
+│   │   │       │       ├── backtrack.rs
+│   │   │       │       ├── builder.rs
+│   │   │       │       ├── compiler.rs
+│   │   │       │       ├── literal_trie.rs
+│   │   │       │       ├── map.rs
+│   │   │       │       ├── nfa.rs
+│   │   │       │       ├── pikevm.rs
+│   │   │       │       └── range_trie.rs
+│   │   │       └── util
+│   │   │           ├── alphabet.rs
+│   │   │           ├── captures.rs
+│   │   │           ├── determinize
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── state.rs
+│   │   │           ├── empty.rs
+│   │   │           ├── escape.rs
+│   │   │           ├── interpolate.rs
+│   │   │           ├── iter.rs
+│   │   │           ├── look.rs
+│   │   │           ├── pool.rs
+│   │   │           ├── prefilter
+│   │   │           │   ├── byteset.rs
+│   │   │           │   ├── memchr.rs
+│   │   │           │   ├── memmem.rs
+│   │   │           │   └── teddy.rs
+│   │   │           ├── primitives.rs
+│   │   │           ├── search.rs
+│   │   │           ├── sparse_set.rs
+│   │   │           ├── utf8.rs
+│   │   │           └── wire.rs
+│   │   ├── regex-syntax-0.8.5
+│   │   │   └── src
+│   │   │       ├── ast
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── parse.rs
+│   │   │       │   └── visitor.rs
+│   │   │       ├── debug.rs
+│   │   │       ├── error.rs
+│   │   │       ├── hir
+│   │   │       │   ├── interval.rs
+│   │   │       │   ├── literal.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── translate.rs
+│   │   │       ├── unicode.rs
+│   │   │       └── utf8.rs
+│   │   ├── reqwest-0.12.22
+│   │   │   └── src
+│   │   │       ├── into_url.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── util.rs
+│   │   │       └── wasm
+│   │   │           ├── client.rs
+│   │   │           ├── mod.rs
+│   │   │           ├── request.rs
+│   │   │           └── response.rs
+│   │   ├── reqwest-eventsource-0.6.0
+│   │   │   └── src
+│   │   │       └── event_source.rs
+│   │   ├── resvg-0.45.0
+│   │   │   └── src
+│   │   │       ├── clip.rs
+│   │   │       ├── filter
+│   │   │       │   ├── box_blur.rs
+│   │   │       │   ├── color_matrix.rs
+│   │   │       │   ├── component_transfer.rs
+│   │   │       │   ├── composite.rs
+│   │   │       │   ├── convolve_matrix.rs
+│   │   │       │   ├── displacement_map.rs
+│   │   │       │   ├── iir_blur.rs
+│   │   │       │   ├── lighting.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── morphology.rs
+│   │   │       │   └── turbulence.rs
+│   │   │       ├── image.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── mask.rs
+│   │   │       ├── path.rs
+│   │   │       └── render.rs
+│   │   ├── roxmltree-0.20.0
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       ├── parse.rs
+│   │   │       └── tokenizer.rs
+│   │   ├── rstar-0.12.2
+│   │   │   └── src
+│   │   │       ├── algorithm
+│   │   │       │   └── rstar.rs
+│   │   │       ├── node.rs
+│   │   │       └── point.rs
+│   │   ├── rubato-0.16.1
+│   │   │   └── src
+│   │   │       └── asynchro_sinc.rs
+│   │   │           └── home
+│   │   │               └── runner
+│   │   ├── rust-stemmers-1.2.0
+│   │   │   └── src
+│   │   │       └── snowball
+│   │   │           └── snowball_env.rs
+│   │   ├── rustybuzz-0.20.1
+│   │   │   └── src
+│   │   │       └── hb
+│   │   │           ├── aat_layout.rs
+│   │   │           ├── aat_layout_kerx_table.rs
+│   │   │           ├── aat_layout_morx_table.rs
+│   │   │           ├── aat_layout_trak_table.rs
+│   │   │           ├── aat_map.rs
+│   │   │           ├── buffer.rs
+│   │   │           ├── kerning.rs
+│   │   │           ├── ot
+│   │   │           │   └── layout
+│   │   │           │       ├── GPOS
+│   │   │           │       │   ├── cursive_pos.rs
+│   │   │           │       │   ├── mark_base_pos.rs
+│   │   │           │       │   ├── mark_lig_pos.rs
+│   │   │           │       │   ├── mark_mark_pos.rs
+│   │   │           │       │   └── pair_pos.rs
+│   │   │           │       └── GSUB
+│   │   │           │           ├── ligature.rs
+│   │   │           │           └── reverse_chain_single_subst.rs
+│   │   │           ├── ot_layout.rs
+│   │   │           ├── ot_layout_gpos_table.rs
+│   │   │           ├── ot_layout_gsubgpos.rs
+│   │   │           ├── ot_map.rs
+│   │   │           ├── ot_shape.rs
+│   │   │           ├── ot_shape_fallback.rs
+│   │   │           ├── ot_shape_normalize.rs
+│   │   │           ├── ot_shape_plan.rs
+│   │   │           ├── ot_shaper_arabic.rs
+│   │   │           ├── ot_shaper_hangul.rs
+│   │   │           ├── ot_shaper_hebrew.rs
+│   │   │           ├── ot_shaper_indic.rs
+│   │   │           ├── ot_shaper_indic_machine.rs
+│   │   │           ├── ot_shaper_khmer.rs
+│   │   │           ├── ot_shaper_khmer_machine.rs
+│   │   │           ├── ot_shaper_myanmar.rs
+│   │   │           ├── ot_shaper_myanmar_machine.rs
+│   │   │           ├── ot_shaper_thai.rs
+│   │   │           ├── ot_shaper_use.rs
+│   │   │           ├── ot_shaper_use_machine.rs
+│   │   │           ├── ot_shaper_use_table.rs
+│   │   │           ├── ot_shaper_vowel_constraints.rs
+│   │   │           ├── paint_extents.rs
+│   │   │           ├── tag.rs
+│   │   │           ├── tag_table.rs
+│   │   │           └── unicode.rs
+│   │   ├── send_wrapper-0.4.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── serde-1.0.197
+│   │   │   └── src
+│   │   │       ├── de
+│   │   │       │   ├── format.rs
+│   │   │       │   ├── impls.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── value.rs
+│   │   │       └── private
+│   │   │           └── de.rs
+│   │   │               └── home
+│   │   │                   └── runner
+│   │   ├── serde-wasm-bindgen-0.6.5
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── serde_json-1.0.140
+│   │   │   └── src
+│   │   │       ├── de.rs
+│   │   │       ├── error.rs
+│   │   │       ├── read.rs
+│   │   │       ├── ser.rs
+│   │   │       └── value
+│   │   │           ├── de.rs
+│   │   │           └── index.rs
+│   │   ├── serde_yaml-0.8.26
+│   │   │   └── src
+│   │   │       ├── de.rs
+│   │   │       ├── ser.rs
+│   │   │       └── value
+│   │   │           ├── de.rs
+│   │   │           └── mod.rs
+│   │   ├── shell-words-1.1.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── shlex-1.3.0
+│   │   │   └── src
+│   │   │       ├── bytes.rs
+│   │   │       └── lib.rs
+│   │   ├── simplecss-0.2.1
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       ├── selector.rs
+│   │   │       └── stream.rs
+│   │   ├── skrifa-0.19.3
+│   │   │   └── src
+│   │   │       └── outline
+│   │   │           ├── glyf
+│   │   │           │   ├── deltas.rs
+│   │   │           │   ├── hint
+│   │   │           │   │   ├── cow_slice.rs
+│   │   │           │   │   ├── instance.rs
+│   │   │           │   │   ├── round.rs
+│   │   │           │   │   ├── value_stack.rs
+│   │   │           │   │   └── zone.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── hint.rs
+│   │   │           └── mod.rs
+│   │   │               └── home
+│   │   │                   └── runner
+│   │   ├── slab-0.4.9
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── slotmap-1.0.6
+│   │   │   └── src
+│   │   │       └── basic.rs
+│   │   ├── smallvec-1.13.2
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── smol_str-0.2.2
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── string_cache-0.8.9
+│   │   │   └── src
+│   │   │       ├── atom.rs
+│   │   │       └── dynamic_set.rs
+│   │   ├── strsim-0.11.1
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── svgtypes-0.15.3
+│   │   │   └── src
+│   │   │       ├── error.rs
+│   │   │       ├── font.rs
+│   │   │       ├── paint_order.rs
+│   │   │       ├── path.rs
+│   │   │       ├── stream.rs
+│   │   │       └── transform_origin.rs
+│   │   ├── swash-0.1.17
+│   │   │   └── src
+│   │   │       ├── cache.rs
+│   │   │       ├── internal
+│   │   │       │   └── parse.rs
+│   │   │       ├── scale
+│   │   │       │   ├── bitmap
+│   │   │       │   │   ├── mod.rs
+│   │   │       │   │   └── png.rs
+│   │   │       │   ├── hinting_cache.rs
+│   │   │       │   └── outline.rs
+│   │   │       ├── strike.rs
+│   │   │       └── string.rs
+│   │   ├── syntect-5.2.0
+│   │   │   └── src
+│   │   │       ├── dumps.rs
+│   │   │       ├── highlighting
+│   │   │       │   ├── highlighter.rs
+│   │   │       │   ├── selector.rs
+│   │   │       │   └── theme_load.rs
+│   │   │       └── parsing
+│   │   │           ├── parser.rs
+│   │   │           ├── regex.rs
+│   │   │           ├── scope.rs
+│   │   │           ├── syntax_definition.rs
+│   │   │           └── syntax_set.rs
+│   │   ├── tendril-0.4.3
+│   │   │   └── src
+│   │   │       └── tendril.rs
+│   │   │           └── home
+│   │   │               └── runner
+│   │   ├── thread_local-1.1.7
+│   │   │   └── src
+│   │   │       └── thread_id.rs
+│   │   ├── time-0.3.36
+│   │   │   └── src
+│   │   │       ├── date.rs
+│   │   │       ├── offset_date_time.rs
+│   │   │       └── parsing
+│   │   │           └── combinator
+│   │   │               └── mod.rs
+│   │   ├── tiny-skia-0.11.4
+│   │   │   └── src
+│   │   │       ├── alpha_runs.rs
+│   │   │       ├── blitter.rs
+│   │   │       ├── edge_builder.rs
+│   │   │       ├── edge_clipper.rs
+│   │   │       ├── fixed_point.rs
+│   │   │       ├── geom.rs
+│   │   │       ├── line_clipper.rs
+│   │   │       ├── mask.rs
+│   │   │       ├── painter.rs
+│   │   │       ├── path64
+│   │   │       │   ├── cubic64.rs
+│   │   │       │   ├── line_cubic_intersections.rs
+│   │   │       │   └── quad64.rs
+│   │   │       ├── path_geometry.rs
+│   │   │       ├── pipeline
+│   │   │       │   ├── blitter.rs
+│   │   │       │   ├── highp.rs
+│   │   │       │   ├── lowp.rs
+│   │   │       │   └── mod.rs
+│   │   │       ├── pixmap.rs
+│   │   │       ├── scan
+│   │   │       │   ├── hairline.rs
+│   │   │       │   ├── hairline_aa.rs
+│   │   │       │   ├── path.rs
+│   │   │       │   └── path_aa.rs
+│   │   │       └── shaders
+│   │   │           ├── gradient.rs
+│   │   │           ├── linear_gradient.rs
+│   │   │           ├── mod.rs
+│   │   │           └── pattern.rs
+│   │   ├── tiny-skia-path-0.11.4
+│   │   │   └── src
+│   │   │       ├── dash.rs
+│   │   │       ├── path.rs
+│   │   │       ├── path_builder.rs
+│   │   │       ├── path_geometry.rs
+│   │   │       ├── rect.rs
+│   │   │       ├── size.rs
+│   │   │       └── stroker.rs
+│   │   ├── tinyvec-1.6.0
+│   │   │   └── src
+│   │   │       ├── arrayvec.rs
+│   │   │       └── tinyvec.rs
+│   │   ├── titlecase-1.1.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── tracing-core-0.1.32
+│   │   │   └── src
+│   │   │       └── callsite.rs
+│   │   ├── ttf-parser-0.25.1
+│   │   │   └── src
+│   │   │       ├── aat.rs
+│   │   │       ├── lib.rs
+│   │   │       └── tables
+│   │   │           ├── cff
+│   │   │           │   ├── argstack.rs
+│   │   │           │   ├── cff2.rs
+│   │   │           │   └── dict.rs
+│   │   │           ├── colr.rs
+│   │   │           ├── gpos.rs
+│   │   │           └── gvar.rs
+│   │   ├── typed-path-0.10.0
+│   │   │   └── src
+│   │   │       ├── common
+│   │   │       │   └── non_utf8
+│   │   │       │       ├── parser.rs
+│   │   │       │       └── path.rs
+│   │   │       ├── unix
+│   │   │       │   └── non_utf8.rs
+│   │   │       └── windows
+│   │   │           ├── non_utf8
+│   │   │           │   └── components
+│   │   │           │       └── parser.rs
+│   │   │           └── non_utf8.rs
+│   │   ├── unicode-bidi-0.3.15
+│   │   │   └── src
+│   │   │       ├── char_data
+│   │   │       │   └── mod.rs
+│   │   │       ├── explicit.rs
+│   │   │       ├── implicit.rs
+│   │   │       ├── lib.rs
+│   │   │       └── prepare.rs
+│   │   ├── unicode-bidi-mirroring-0.4.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── unicode-linebreak-0.1.5
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── unicode-properties-0.1.3
+│   │   │   └── src
+│   │   │       └── tables.rs
+│   │   ├── unicode-script-0.5.5
+│   │   │   └── src
+│   │   │       └── tables.rs
+│   │   ├── unicode-segmentation-1.11.0
+│   │   │   └── src
+│   │   │       ├── grapheme.rs
+│   │   │       └── tables.rs
+│   │   ├── unicode-width-0.1.12
+│   │   │   └── src
+│   │   │       └── tables.rs
+│   │   ├── url-2.5.4
+│   │   │   └── src
+│   │   │       ├── host.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── origin.rs
+│   │   │       └── parser.rs
+│   │   ├── usvg-0.45.0
+│   │   │   └── src
+│   │   │       ├── parser
+│   │   │       │   ├── clippath.rs
+│   │   │       │   ├── converter.rs
+│   │   │       │   ├── filter.rs
+│   │   │       │   ├── image.rs
+│   │   │       │   ├── marker.rs
+│   │   │       │   ├── mask.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── paint_server.rs
+│   │   │       │   ├── shapes.rs
+│   │   │       │   ├── style.rs
+│   │   │       │   ├── svgtree
+│   │   │       │   │   ├── mod.rs
+│   │   │       │   │   ├── names.rs
+│   │   │       │   │   ├── parse.rs
+│   │   │       │   │   └── text.rs
+│   │   │       │   ├── switch.rs
+│   │   │       │   ├── text.rs
+│   │   │       │   ├── units.rs
+│   │   │       │   └── use_node.rs
+│   │   │       ├── text
+│   │   │       │   ├── colr.rs
+│   │   │       │   ├── flatten.rs
+│   │   │       │   ├── layout.rs
+│   │   │       │   └── mod.rs
+│   │   │       └── tree
+│   │   │           ├── filter.rs
+│   │   │           └── mod.rs
+│   │   ├── utf-8-0.7.6
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── uuid-1.17.0
+│   │   │   └── src
+│   │   │       ├── error.rs
+│   │   │       ├── fmt.rs
+│   │   │       ├── parser.rs
+│   │   │       └── rng.rs
+│   │   ├── validator-0.19.0
+│   │   │   └── src
+│   │   │       └── validation
+│   │   │           └── email.rs
+│   │   ├── vec1-1.10.1
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── version-compare-0.1.1
+│   │   │   └── src
+│   │   │       └── version.rs
+│   │   ├── wasm-bindgen-0.2.100
+│   │   │   └── src
+│   │   │       └── convert
+│   │   │           └── slices.rs
+│   │   ├── wasm-bindgen-futures-0.4.50
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       ├── queue.rs
+│   │   │       └── task
+│   │   │           └── singlethread.rs
+│   │   ├── wasm-streams-0.4.0
+│   │   │   └── src
+│   │   │       ├── readable
+│   │   │       │   ├── into_underlying_byte_source.rs
+│   │   │       │   └── into_underlying_source.rs
+│   │   │       └── writable
+│   │   │           └── into_underlying_sink.rs
+│   │   ├── web-sys-0.3.77
+│   │   │   └── src
+│   │   │       └── features
+│   │   │           ├── gen_NotificationPermission.rs
+│   │   │           └── gen_VisibilityState.rs
+│   │   ├── web-time-1.1.0
+│   │   │   └── src
+│   │   │       └── time
+│   │   │           └── js.rs
+│   │   ├── weezl-0.1.8
+│   │   │   └── src
+│   │   │       ├── decode.rs
+│   │   │       ├── encode.rs
+│   │   │       └── lib.rs
+│   │   ├── woothee-0.13.0
+│   │   │   └── src
+│   │   │       └── parser.rs
+│   │   ├── ws_stream_wasm-0.7.4
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       ├── ws_message.rs
+│   │   │       ├── ws_meta.rs
+│   │   │       └── ws_stream.rs
+│   │   ├── xmlwriter-0.1.0
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── yazi-0.1.6
+│   │   │   └── src
+│   │   │       └── decode.rs
+│   │   ├── zeno-0.2.3
+│   │   │   └── src
+│   │   │       ├── mask.rs
+│   │   │       ├── raster.rs
+│   │   │       ├── segment.rs
+│   │   │       └── stroke.rs
+│   │   ├── zune-core-0.4.12
+│   │   │   └── src
+│   │   │       └── bytestream
+│   │   │           └── reader.rs
+│   │   └── zune-jpeg-0.4.14
+│   │       └── src
+│   │           ├── bitstream.rs
+│   │           ├── color_convert
+│   │           │   └── scalar.rs
+│   │           ├── components.rs
+│   │           ├── decoder.rs
+│   │           ├── headers.rs
+│   │           ├── huffman.rs
+│   │           ├── idct
+│   │           │   └── scalar.rs
+│   │           ├── mcu.rs
+│   │           ├── mcu_prog.rs
+│   │           ├── misc.rs
+│   │           ├── upsampler
+│   │           │   └── scalar.rs
+│   │           └── worker.rs
+│   ├── init_tracker
+│   │   ├── mod.rs
+│   │   └── texture.rs
+│   ├── input_suggestions.rs
+│   ├── instance.rs
+│   ├── integration
+│   │   ├── driver.rs
+│   │   ├── mod.rs
+│   │   └── step.rs
+│   ├── interval_timer.rs
+│   ├── io
+│   │   ├── borrowed_buf.rs
+│   │   ├── buffered
+│   │   │   └── linewritershim.rs
+│   │   ├── impls.rs
+│   │   ├── mod.rs
+│   │   └── stdio.rs
+│   ├── iter
+│   │   ├── adapters
+│   │   │   ├── step_by.rs
+│   │   │   └── zip.rs
+│   │   └── traits
+│   │       ├── collect.rs
+│   │       └── iterator.rs
+│   ├── keyboard.rs
+│   ├── keymap
+│   │   └── matcher.rs
+│   ├── keymap.rs
+│   ├── lib.rs
+│   ├── markdown_parser.rs
+│   ├── math.rs
+│   ├── menu.rs
+│   ├── meta.rs
+│   ├── metrics_collector.rs
+│   ├── modal.rs
+│   ├── model
+│   │   ├── ansi
+│   │   │   └── control_sequence_parameters.rs
+│   │   ├── grid
+│   │   │   ├── flat_storage
+│   │   │   │   ├── content.rs
+│   │   │   │   ├── grapheme.rs
+│   │   │   │   ├── index.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── row_iterator.rs
+│   │   │   └── row.rs
+│   │   └── indexing.rs
+│   ├── model.rs
+│   ├── net
+│   │   ├── display_buffer.rs
+│   │   ├── ip_addr.rs
+│   │   └── parser.rs
+│   ├── notebooks
+│   │   ├── active_notebook_data.rs
+│   │   ├── context_menu.rs
+│   │   ├── editor
+│   │   │   ├── embedded_item.rs
+│   │   │   ├── model.rs
+│   │   │   ├── notebook_command.rs
+│   │   │   └── view.rs
+│   │   ├── file
+│   │   │   └── mod.rs
+│   │   ├── link.rs
+│   │   ├── manager.rs
+│   │   ├── mod.rs
+│   │   └── notebook.rs
+│   ├── num
+│   │   ├── bignum.rs
+│   │   ├── dec2flt
+│   │   │   ├── decimal_seq.rs
+│   │   │   └── parse.rs
+│   │   ├── diy_float.rs
+│   │   ├── f32.rs
+│   │   ├── f64.rs
+│   │   └── flt2dec
+│   │       ├── mod.rs
+│   │       └── strategy
+│   │           ├── dragon.rs
+│   │           └── grisu.rs
+│   ├── ops
+│   │   └── function.rs
+│   ├── pane_group
+│   │   ├── mod.rs
+│   │   ├── pane
+│   │   │   ├── env_var_collection_pane.rs
+│   │   │   ├── terminal_pane.rs
+│   │   │   ├── view
+│   │   │   │   └── header
+│   │   │   │       └── mod.rs
+│   │   │   ├── welcome_view.rs
+│   │   │   └── workflow_pane.rs
+│   │   └── tree.rs
+│   ├── panicking.rs
+│   ├── params.rs
+│   ├── parser
+│   │   └── diff_validation.rs
+│   ├── parser.rs
+│   ├── parsers
+│   │   ├── hir
+│   │   │   └── mod.rs
+│   │   ├── mod.rs
+│   │   └── simple
+│   │       ├── iter.rs
+│   │       ├── lexer.rs
+│   │       ├── mod.rs
+│   │       └── parser.rs
+│   ├── path.rs
+│   ├── persistence
+│   │   └── mod.rs
+│   ├── pipeline.rs
+│   ├── platform
+│   │   ├── app.rs
+│   │   ├── mod.rs
+│   │   ├── wasm
+│   │   │   └── mod.rs
+│   │   └── wasm.rs
+│   ├── platform_impl
+│   │   └── web
+│   │       ├── async
+│   │       │   ├── atomic_waker.rs
+│   │       │   ├── channel.rs
+│   │       │   ├── concurrent_queue.rs
+│   │       │   ├── dispatcher.rs
+│   │       │   ├── notifier.rs
+│   │       │   ├── waker.rs
+│   │       │   └── wrapper.rs
+│   │       ├── cursor.rs
+│   │       ├── event_loop
+│   │       │   ├── mod.rs
+│   │       │   ├── runner.rs
+│   │       │   └── window_target.rs
+│   │       ├── main_thread.rs
+│   │       ├── web_sys
+│   │       │   ├── animation_frame.rs
+│   │       │   ├── canvas.rs
+│   │       │   ├── event.rs
+│   │       │   ├── event_handle.rs
+│   │       │   ├── intersection_handle.rs
+│   │       │   ├── media_query_handle.rs
+│   │       │   ├── mod.rs
+│   │       │   ├── pointer.rs
+│   │       │   ├── resize_scaling.rs
+│   │       │   └── schedule.rs
+│   │       └── window.rs
+│   ├── pool.rs
+│   ├── prefix.rs
+│   ├── present.rs
+│   ├── presenter.rs
+│   ├── proc
+│   │   ├── constant_evaluator.rs
+│   │   ├── emitter.rs
+│   │   ├── layouter.rs
+│   │   ├── mod.rs
+│   │   ├── namer.rs
+│   │   └── typifier.rs
+│   ├── projects.rs
+│   ├── prompt
+│   │   └── editor_modal.rs
+│   ├── ptr
+│   │   └── mod.rs
+│   ├── quit_warning
+│   │   └── mod.rs
+│   ├── raw
+│   │   └── mod.rs
+│   ├── raw_vec
+│   │   └── mod.rs
+│   ├── rc.rs
+│   ├── referral_theme_status.rs
+│   ├── render
+│   │   ├── element
+│   │   │   ├── broken_embedding.rs
+│   │   │   ├── empty.rs
+│   │   │   ├── header.rs
+│   │   │   ├── hidden_section.rs
+│   │   │   ├── horizontal_rule.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── ordered_list.rs
+│   │   │   ├── paint.rs
+│   │   │   ├── paragraph.rs
+│   │   │   ├── placeholder.rs
+│   │   │   ├── runnable_command.rs
+│   │   │   ├── task_list.rs
+│   │   │   ├── temporary_block.rs
+│   │   │   └── unordered_list.rs
+│   │   └── model
+│   │       ├── location.rs
+│   │       ├── mod.rs
+│   │       └── viewport.rs
+│   ├── rendering
+│   │   ├── glyph_cache.rs
+│   │   ├── texture_cache.rs
+│   │   └── wgpu
+│   │       ├── renderer
+│   │       │   ├── frame.rs
+│   │       │   ├── glyph.rs
+│   │       │   ├── image.rs
+│   │       │   ├── rect.rs
+│   │       │   └── util.rs
+│   │       ├── renderer.rs
+│   │       └── resources.rs
+│   ├── resource.rs
+│   ├── resource_center
+│   │   ├── keybindings_page.rs
+│   │   ├── main_page.rs
+│   │   ├── mod.rs
+│   │   ├── section_views
+│   │   │   ├── changelog_section.rs
+│   │   │   ├── content_section.rs
+│   │   │   └── feature_section.rs
+│   │   ├── sections.rs
+│   │   ├── utils.rs
+│   │   └── view.rs
+│   ├── root_view.rs
+│   ├── rt.rs
+│   ├── rules
+│   │   ├── brew
+│   │   │   ├── brew_install.rs
+│   │   │   ├── brew_link.rs
+│   │   │   ├── brew_uninstall.rs
+│   │   │   └── brew_unknown_command.rs
+│   │   ├── cargo
+│   │   │   └── cargo_no_command.rs
+│   │   │       └── home
+│   │   │           └── runner
+│   │   ├── cd
+│   │   │   └── mod.rs
+│   │   ├── conda
+│   │   │   └── conda_unknown_command.rs
+│   │   ├── cp
+│   │   │   ├── cp_create_destination.rs
+│   │   │   └── cp_directory.rs
+│   │   ├── docker
+│   │   │   ├── docker_image_rm.rs
+│   │   │   └── docker_no_command.rs
+│   │   ├── generic
+│   │   │   ├── cd_parent.rs
+│   │   │   ├── leading_shell_prompt.rs
+│   │   │   └── python.rs
+│   │   ├── git
+│   │   │   ├── git_branch_delete_unmerged.rs
+│   │   │   │   └── home
+│   │   │   │       └── runner
+│   │   │   ├── git_command_not_found.rs
+│   │   │   ├── git_push_create_pr.rs
+│   │   │   ├── git_push_force.rs
+│   │   │   └── git_push_set_upstream.rs
+│   │   ├── grep
+│   │   │   └── grep_recursive.rs
+│   │   ├── java
+│   │   │   └── dot_java.rs
+│   │   ├── ls
+│   │   │   └── ls_all.rs
+│   │   ├── mkdir
+│   │   │   └── mkdir_p.rs
+│   │   ├── npm
+│   │   │   └── npm_unknown_command.rs
+│   │   ├── open
+│   │   │   └── open_does_not_exist.rs
+│   │   ├── pip
+│   │   │   └── pip_unknown_command.rs
+│   │   ├── python
+│   │   │   ├── python_execute.rs
+│   │   │   └── python_module_error.rs
+│   │   ├── rails
+│   │   │   └── rails_pending_migrations.rs
+│   │   ├── touch
+│   │   │   └── missing_touch.rs
+│   │   └── yarn
+│   │       ├── yarn_alias.rs
+│   │       ├── yarn_command_not_found.rs
+│   │       └── yarn_command_replaced.rs
+│   │           └── home
+│   │               └── runner
+│   ├── scanner.rs
+│   ├── scene.rs
+│   ├── scratch.rs
+│   ├── search
+│   │   ├── ai_context_menu
+│   │   │   └── view.rs
+│   │   ├── command_palette
+│   │   │   ├── conversations
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── search.rs
+│   │   │   ├── files
+│   │   │   │   └── search_item.rs
+│   │   │   ├── navigation
+│   │   │   │   ├── chunk_color.rs
+│   │   │   │   └── render.rs
+│   │   │   ├── view.rs
+│   │   │   ├── warp_drive
+│   │   │   │   └── data_source.rs
+│   │   │   └── zero_state.rs
+│   │   ├── command_search
+│   │   │   ├── notebooks
+│   │   │   │   └── notebook_search_item.rs
+│   │   │   ├── settings.rs
+│   │   │   ├── view.rs
+│   │   │   ├── warp_ai.rs
+│   │   │   └── zero_state.rs
+│   │   ├── data_source.rs
+│   │   ├── env_var_collections
+│   │   │   └── fuzzy_match.rs
+│   │   ├── external_secrets
+│   │   │   └── view.rs
+│   │   ├── mixer.rs
+│   │   ├── notebook_embedding
+│   │   │   ├── embedded_fuzzy_match.rs
+│   │   │   └── view.rs
+│   │   ├── notebooks
+│   │   │   └── fuzzy_match.rs
+│   │   ├── search_bar.rs
+│   │   ├── search_results_menu
+│   │   │   └── view.rs
+│   │   ├── slash_command_menu
+│   │   │   └── static_commands
+│   │   │       └── data_source.rs
+│   │   ├── welcome_palette
+│   │   │   └── view.rs
+│   │   └── workflows
+│   │       └── fuzzy_match.rs
+│   ├── search.rs
+│   ├── search_bar.rs
+│   ├── selection.rs
+│   ├── semantic_selection
+│   │   └── mod.rs
+│   ├── sequencematcher.rs
+│   ├── server
+│   │   ├── cloud_objects
+│   │   │   ├── listener.rs
+│   │   │   └── update_manager.rs
+│   │   ├── experiments
+│   │   │   └── model.rs
+│   │   ├── graphql
+│   │   │   └── mod.rs
+│   │   ├── ids.rs
+│   │   ├── network_logging.rs
+│   │   ├── server_api
+│   │   │   ├── ai.rs
+│   │   │   ├── auth.rs
+│   │   │   ├── block.rs
+│   │   │   ├── client.rs
+│   │   │   ├── object.rs
+│   │   │   ├── referral.rs
+│   │   │   ├── team.rs
+│   │   │   └── workspace.rs
+│   │   ├── server_api.rs
+│   │   ├── sync_queue.rs
+│   │   ├── telemetry
+│   │   │   ├── collector.rs
+│   │   │   ├── context.rs
+│   │   │   ├── events.rs
+│   │   │   └── mod.rs
+│   │   ├── telemetry_ext.rs
+│   │   └── voice_transcriber.rs
+│   ├── settings
+│   │   ├── accessibility.rs
+│   │   ├── active_ai_persisted_data.rs
+│   │   ├── ai.rs
+│   │   ├── alias_expansion.rs
+│   │   ├── app_icon.rs
+│   │   ├── app_installation_detection.rs
+│   │   ├── block_visibility.rs
+│   │   ├── changelog.rs
+│   │   ├── cloud_preferences.rs
+│   │   ├── cloud_preferences_syncer.rs
+│   │   ├── code.rs
+│   │   ├── debug.rs
+│   │   ├── editor.rs
+│   │   ├── emacs_bindings.rs
+│   │   ├── font.rs
+│   │   ├── gpu.rs
+│   │   ├── initializer.rs
+│   │   ├── input.rs
+│   │   ├── input_mode.rs
+│   │   ├── mod.rs
+│   │   ├── native_preference.rs
+│   │   ├── pane.rs
+│   │   ├── privacy.rs
+│   │   ├── scroll.rs
+│   │   ├── select.rs
+│   │   ├── ssh.rs
+│   │   ├── theme.rs
+│   │   └── vim_banner.rs
+│   ├── settings_view
+│   │   ├── ai_page.rs
+│   │   ├── appearance_page.rs
+│   │   ├── billing_and_usage
+│   │   │   └── overage_limit_modal.rs
+│   │   ├── billing_and_usage_page.rs
+│   │   ├── code_page.rs
+│   │   ├── execution_profile_view.rs
+│   │   ├── features
+│   │   │   └── undo_close.rs
+│   │   ├── features_page.rs
+│   │   ├── keybindings.rs
+│   │   ├── main_page.rs
+│   │   ├── mod.rs
+│   │   ├── pane_manager.rs
+│   │   ├── privacy_page.rs
+│   │   ├── referrals_page.rs
+│   │   ├── settings_page.rs
+│   │   ├── show_blocks_view.rs
+│   │   ├── teams_page.rs
+│   │   └── warpify_page.rs
+│   ├── shape.rs
+│   ├── signature.rs
+│   ├── signatures
+│   │   └── legacy
+│   │       ├── mod.rs
+│   │       └── registry.rs
+│   ├── slice
+│   │   ├── index.rs
+│   │   ├── iter.rs
+│   │   ├── memchr.rs
+│   │   ├── mod.rs
+│   │   └── sort
+│   │       ├── shared
+│   │       │   └── smallsort.rs
+│   │       └── stable
+│   │           └── quicksort.rs
+│   ├── slice.rs
+│   ├── span.rs
+│   ├── storage.rs
+│   ├── str
+│   │   ├── lossy.rs
+│   │   ├── mod.rs
+│   │   ├── mod.rslibrary
+│   │   │   └── core
+│   │   │       └── src
+│   │   │           └── str
+│   │   │               └── pattern.rs
+│   │   └── pattern.rs
+│   ├── str.rs
+│   ├── string.rs
+│   ├── swash.rs
+│   ├── sync
+│   │   ├── lazy_lock.rs
+│   │   ├── mpmc
+│   │   │   ├── array.rs
+│   │   │   ├── context.rs
+│   │   │   ├── list.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── waker.rs
+│   │   │   └── zero.rs
+│   │   ├── once_lock.rs
+│   │   ├── poison
+│   │   │   └── once.rs
+│   │   └── reentrant_lock.rs
+│   ├── sync.rs
+│   ├── sync_queue.rs
+│   ├── sys
+│   │   ├── io
+│   │   │   └── io_slice
+│   │   │       └── unsupported.rs
+│   │   ├── pal
+│   │   │   ├── unsupported
+│   │   │   │   └── time.rs
+│   │   │   └── wasm
+│   │   └── sync
+│   │       ├── condvar
+│   │       │   └── no_threads.rs
+│   │       ├── mutex
+│   │       │   └── no_threads.rs
+│   │       ├── once
+│   │       │   └── no_threads.rs
+│   │       └── rwlock
+│   │           └── no_threads.rs
+│   ├── tab.rs
+│   ├── terminal
+│   │   ├── alias.rs
+│   │   ├── alt_screen
+│   │   │   └── alt_screen_element.rs
+│   │   ├── alt_screen_reporting.rs
+│   │   ├── block_filter.rs
+│   │   ├── block_list_element.rs
+│   │   ├── block_list_settings.rs
+│   │   ├── block_list_viewport.rs
+│   │   ├── bootstrap.rs
+│   │   ├── color.rs
+│   │   ├── dynamic_enum_suggestions.rs
+│   │   ├── event_listener.rs
+│   │   ├── find
+│   │   │   └── model
+│   │   │       ├── alt_screen.rs
+│   │   │       └── block_list.rs
+│   │   ├── general_settings.rs
+│   │   ├── grid_renderer.rs
+│   │   ├── grid_size_util.rs
+│   │   ├── history.rs
+│   │   ├── input
+│   │   │   └── decorations.rs
+│   │   ├── input.rs
+│   │   ├── keys_settings.rs
+│   │   ├── ligature_settings.rs
+│   │   ├── mod.rs
+│   │   ├── model
+│   │   │   ├── ansi
+│   │   │   │   ├── ansi_c_decoder.rs
+│   │   │   │   ├── dcs_hooks.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── block.rs
+│   │   │   ├── blockgrid.rs
+│   │   │   ├── blocks
+│   │   │   │   └── selection.rs
+│   │   │   ├── blocks.rs
+│   │   │   ├── bootstrap.rs
+│   │   │   ├── escape_sequences.rs
+│   │   │   ├── find.rs
+│   │   │   ├── grid
+│   │   │   │   ├── ansi_handler.rs
+│   │   │   │   ├── displayed_output.rs
+│   │   │   │   ├── filtering.rs
+│   │   │   │   ├── grapheme_cursor.rs
+│   │   │   │   ├── grid_handler.rs
+│   │   │   │   ├── grid_storage
+│   │   │   │   │   └── resize.rs
+│   │   │   │   ├── grid_storage.rs
+│   │   │   │   ├── indexing.rs
+│   │   │   │   ├── resize.rs
+│   │   │   │   ├── secrets.rs
+│   │   │   │   └── storage.rs
+│   │   │   ├── header_grid.rs
+│   │   │   ├── image_map.rs
+│   │   │   ├── secrets.rs
+│   │   │   ├── session
+│   │   │   │   └── command_executor
+│   │   │   │       ├── in_band_command_executor.rs
+│   │   │   │       └── noop_command_executor.rs
+│   │   │   ├── session.rs
+│   │   │   ├── terminal_model.rs
+│   │   │   └── tmux
+│   │   │       ├── commands.rs
+│   │   │       ├── mod.rsapp
+│   │   │       │   └── src
+│   │   │       │       └── terminal
+│   │   │       │           └── model
+│   │   │       │               └── early_output.rs
+│   │   │       └── parser.rs
+│   │   ├── model_events.rs
+│   │   ├── profile_selector.rs
+│   │   ├── safe_mode_settings.rs
+│   │   ├── session_settings.rs
+│   │   ├── settings.rs
+│   │   ├── share_block_modal.rs
+│   │   ├── shared_session
+│   │   │   ├── manager.rs
+│   │   │   ├── network
+│   │   │   │   └── heartbeat.rs
+│   │   │   ├── presence_manager.rs
+│   │   │   ├── role_change_modal
+│   │   │   │   └── mod.rs
+│   │   │   ├── settings.rs
+│   │   │   ├── share_modal
+│   │   │   │   ├── body.rs
+│   │   │   │   └── mod.rs
+│   │   │   └── viewer
+│   │   │       ├── event_loop.rs
+│   │   │       ├── history_model.rs
+│   │   │       ├── network.rs
+│   │   │       └── terminal_manager.rs
+│   │   ├── shell.rs
+│   │   ├── ssh
+│   │   │   ├── install_tmux.rs
+│   │   │   ├── util.rs
+│   │   │   └── warpify.rs
+│   │   ├── static_prompt_suggestions.rs
+│   │   ├── terminal_size_element.rs
+│   │   ├── universal_developer_input.rs
+│   │   ├── view
+│   │   │   ├── ai_control_panel.rs
+│   │   │   ├── block_onboarding
+│   │   │   │   └── onboarding_agentic_suggestions_block.rs
+│   │   │   ├── init_project
+│   │   │   │   └── mod.rs
+│   │   │   ├── inline_banner
+│   │   │   │   ├── notifications_error.rs
+│   │   │   │   └── prompt_suggestions.rs
+│   │   │   ├── link_detection.rs
+│   │   │   ├── load_ai_conversation.rs
+│   │   │   ├── open_in_warp.rs
+│   │   │   ├── shared_session
+│   │   │   │   ├── adapter.rs
+│   │   │   │   └── view_impl.rs
+│   │   │   ├── shell_terminated_banner.rs
+│   │   │   ├── ssh_file_upload.rs
+│   │   │   └── tooltips.rs
+│   │   ├── view.rs
+│   │   ├── warpify
+│   │   │   ├── mod.rs
+│   │   │   └── settings.rs
+│   │   └── waterfall_gap_element.rs
+│   ├── text_layout.rs
+│   ├── themes
+│   │   ├── theme.rs
+│   │   ├── theme_chooser.rs
+│   │   ├── theme_creator.rs
+│   │   └── theme_creator_body.rs
+│   ├── thread
+│   │   ├── current.rs
+│   │   ├── local.rs
+│   │   └── mod.rs
+│   ├── time.rs
+│   ├── tips
+│   │   └── tip_view.rs
+│   ├── track
+│   │   ├── buffer.rs
+│   │   ├── metadata.rs
+│   │   ├── mod.rs
+│   │   ├── range.rs
+│   │   ├── stateless.rs
+│   │   └── texture.rs
+│   ├── ui_components
+│   │   ├── avatar.rs
+│   │   ├── dialog.rs
+│   │   ├── keyboard_shortcut.rs
+│   │   ├── link.rs
+│   │   ├── radio_buttons.rs
+│   │   ├── red_notification_dot.rs
+│   │   ├── segmented_control.rs
+│   │   ├── slider.rs
+│   │   ├── text.rs
+│   │   ├── toggle_menu.rs
+│   │   └── tool_tip.rs
+│   ├── undo_close
+│   │   ├── settings.rs
+│   │   └── stack.rs
+│   ├── unicode
+│   │   ├── printable.rs
+│   │   └── unicode_data.rs
+│   ├── uri
+│   │   ├── browser_url_handler.rs
+│   │   ├── docker.rs
+│   │   ├── mod.rs
+│   │   └── web_intent_parser.rs
+│   ├── user_config
+│   │   └── mod.rs
+│   ├── util
+│   │   ├── bindings.rs
+│   │   ├── device.rs
+│   │   ├── links.rs
+│   │   ├── mod.rs
+│   │   ├── sync.rs
+│   │   └── time_format.rs
+│   ├── util.rs
+│   ├── valid
+│   │   ├── analyzer.rs
+│   │   ├── compose.rs
+│   │   ├── expression.rs
+│   │   ├── function.rs
+│   │   ├── handles.rs
+│   │   ├── interface.rs
+│   │   ├── mod.rs
+│   │   └── type.rs
+│   ├── validation.rs
+│   ├── vec
+│   │   ├── mod.rs
+│   │   └── spec_from_iter_nested.rs
+│   ├── view_components
+│   │   ├── agent_toast.rs
+│   │   ├── dismissible_toast.rs
+│   │   ├── find.rs
+│   │   └── loading_animation.rs
+│   ├── vim
+│   │   └── mod.rs
+│   ├── voice.rs
+│   ├── voltron.rs
+│   ├── wasm.rs
+│   ├── wasm_nux_dialog.rs
+│   ├── weak_vec.rs
+│   ├── window.rs
+│   ├── window_settings.rs
+│   ├── windowing
+│   │   ├── state.rs
+│   │   └── winit
+│   │       ├── app.rs
+│   │       ├── delegate.rs
+│   │       ├── event_loop
+│   │       │   └── mod.rs
+│   │       ├── fonts
+│   │       │   ├── str_index_map.rs
+│   │       │   ├── swash_rasterizer.rs
+│   │       │   └── text_layout.rs
+│   │       ├── fonts.rs
+│   │       ├── notifications
+│   │       │   ├── mod.rs
+│   │       │   └── wasm.rs
+│   │       ├── wasm.rs
+│   │       └── window.rs
+│   ├── word_block_editor.rs
+│   ├── workflows
+│   │   ├── aliases.rs
+│   │   ├── categories.rs
+│   │   ├── command_parser.rs
+│   │   ├── export_workflow.rs
+│   │   ├── info_box.rs
+│   │   ├── manager.rs
+│   │   ├── mod.rs
+│   │   ├── workflow.rs
+│   │   ├── workflow_view
+│   │   │   ├── alias_argument_selector.rs
+│   │   │   ├── alias_bar.rs
+│   │   │   ├── argument_editor.rs
+│   │   │   └── syntax_highlightable.rs
+│   │   └── workflow_view.rs
+│   ├── workspace
+│   │   ├── close_session_confirmation_dialog.rs
+│   │   ├── global_actions.rs
+│   │   ├── native_modal.rs
+│   │   ├── one_time_modal_model.rs
+│   │   ├── tab_settings.rs
+│   │   ├── view
+│   │   │   └── ade_launch_modal.rs
+│   │   └── view.rs
+│   └── workspaces
+│       ├── gql_convert.rs
+│       ├── team_tester.rs
+│       ├── update_manager.rs
+│       └── user_workspaces.rs
+├── todo.md
+├── ui
+│   ├── Cargo.toml
+│   └── src
+│       ├── app_focus_telemetry.rs
+│       ├── assets
+│       │   └── asset_cache.rs
+│       ├── async
+│       │   ├── mod.rs
+│       │   └── wasm
+│       │       └── mod.rs
+│       ├── clipboard_utils.rs
+│       ├── core
+│       │   ├── app.rs
+│       │   ├── mod.rs
+│       │   ├── model
+│       │   │   └── context.rs
+│       │   └── view
+│       │       └── context.rs
+│       ├── debug
+│       │   └── view_tree_debug_view.rs
+│       ├── elements
+│       │   ├── align.rs
+│       │   ├── clipped.rs
+│       │   ├── clipped_scrollable.rs
+│       │   ├── container.rs
+│       │   ├── dismiss.rs
+│       │   ├── drag
+│       │   │   └── draggable.rs
+│       │   ├── event_handler.rs
+│       │   ├── flex
+│       │   │   ├── mod.rs
+│       │   │   └── wrap.rs
+│       │   ├── formatted_text_element.rs
+│       │   ├── hoverable.rs
+│       │   ├── icon.rs
+│       │   ├── image.rs
+│       │   ├── list.rs
+│       │   ├── min_size.rs
+│       │   ├── mod.rs
+│       │   ├── new_scrollable
+│       │   │   ├── dual_axis_config.rs
+│       │   │   ├── mod.rs
+│       │   │   └── single_axis_config.rs
+│       │   ├── rect.rs
+│       │   ├── resizable.rs
+│       │   ├── scrollable.rs
+│       │   ├── selectable_area.rs
+│       │   ├── stack
+│       │   │   ├── mod.rs
+│       │   │   └── save_position.rs
+│       │   ├── text.rs
+│       │   └── uniform_list.rs
+│       ├── fonts
+│       │   └── external_fallback.rs
+│       ├── fonts.rs
+│       ├── image_cache.rs
+│       ├── integration
+│       │   ├── driver.rs
+│       │   ├── mod.rs
+│       │   └── step.rs
+│       ├── keymap
+│       │   └── matcher.rs
+│       ├── keymap.rs
+│       ├── lib.rs
+│       ├── platform
+│       │   ├── app.rs
+│       │   ├── mod.rs
+│       │   └── wasm
+│       │       └── mod.rs
+│       ├── presenter.rs
+│       ├── rendering
+│       │   ├── glyph_cache.rs
+│       │   ├── mod.rs
+│       │   ├── texture_cache.rs
+│       │   └── wgpu
+│       │       ├── renderer
+│       │       │   ├── frame.rs
+│       │       │   ├── glyph.rs
+│       │       │   ├── image.rs
+│       │       │   ├── rect.rs
+│       │       │   └── util.rs
+│       │       ├── renderer.rs
+│       │       └── resources.rs
+│       ├── scene.rs
+│       ├── text_layout.rs
+│       ├── ui_components
+│       │   ├── keyboard_shortcut.rs
+│       │   ├── link.rs
+│       │   ├── mod.rs
+│       │   ├── radio_buttons.rs
+│       │   ├── segmented_control.rs
+│       │   ├── slider.rs
+│       │   ├── text.rs
+│       │   ├── toggle_menu.rs
+│       │   └── tool_tip.rs
+│       ├── voice.rs
+│       └── windowing
+│           ├── mod.rs
+│           ├── state.rs
+│           └── winit
+│               ├── app.rs
+│               ├── delegate.rs
+│               ├── event_loop
+│               │   └── mod.rs
+│               ├── fonts
+│               │   ├── str_index_map.rs
+│               │   ├── swash_rasterizer.rs
+│               │   └── text_layout.rs
+│               ├── fonts.rs
+│               ├── notifications
+│               │   ├── mod.rs
+│               │   └── wasm.rs
+│               ├── wasm.rs
+│               └── window.rs
+├── warp-internal
+│   └── warp-internal
+│       ├── channel_versions
+│       │   └── src
+│       │       └── lib.rs
+│       ├── editor
+│       │   └── src
+│       │       ├── model.rs
+│       │       └── render
+│       │           └── element
+│       │               └── mod.rs
+│       ├── graphql
+│       │   └── src
+│       │       └── api
+│       │           └── subscriptions
+│       │               └── mod.rs
+│       ├── markdown_parser
+│       │   └── src
+│       │       └── lib.rs
+│       ├── sum_tree
+│       │   └── src
+│       │       ├── cursor.rs
+│       │       └── lib.rs
+│       ├── target
+│       │   └── wasm32-unknown-unknown
+│       │       └── release-wasm
+│       │           └── build
+│       │               └── warp_multi_agent_api-885a4d7d05c2e316
+│       │                   └── out
+│       │                       └── warp.multi_agent.v1.rs
+│       ├── ui
+│       │   └── src
+│       │       ├── assets
+│       │       │   └── asset_cache.rs
+│       │       ├── async
+│       │       │   └── mod.rs
+│       │       ├── core
+│       │       │   ├── app.rs
+│       │       │   ├── model
+│       │       │   │   └── context.rs
+│       │       │   └── view
+│       │       │       └── context.rs
+│       │       ├── elements
+│       │       │   ├── formatted_text_element.rs
+│       │       │   ├── text.rs
+│       │       │   └── uniform_list.rs
+│       │       ├── integration
+│       │       │   ├── driver.rs
+│       │       │   └── step.rs
+│       │       ├── keymap.rs
+│       │       ├── platform
+│       │       │   └── app.rs
+│       │       ├── presenter.rs
+│       │       ├── ui_components
+│       │       │   └── segmented_control.rs
+│       │       └── windowing
+│       │           └── winit
+│       │               └── app.rs
+│       ├── warp_completer
+│       │   └── src
+│       │       ├── completer
+│       │       │   ├── describe.rs
+│       │       │   └── suggest
+│       │       │       ├── alias.rs
+│       │       │       └── mod.rs
+│       │       └── util.rs
+│       ├── warp_core
+│       │   └── src
+│       │       ├── interval_timer.rs
+│       │       ├── semantic_selection
+│       │       │   └── mod.rs
+│       │       ├── settings
+│       │       │   └── mod.rs
+│       │       └── sync_queue.rs
+│       ├── warp_files
+│       │   └── src
+│       │       └── lib.rs
+│       ├── warp_terminal
+│       │   └── src
+│       │       └── model
+│       │           ├── grid
+│       │           │   ├── flat_storage
+│       │           │   │   └── index.rs
+│       │           │   └── row.rs
+│       │           └── indexing.rs
+│       └── websocket
+│           └── src
+│               ├── lib.rs
+│               └── wasm.rs
+├── warp_core
+│   ├── Cargo.toml
+│   └── src
+│       ├── channel
+│       │   └── state.rs
+│       ├── context_flag.rs
+│       ├── features.rs
+│       ├── interval_timer.rs
+│       ├── lib.rs
+│       ├── semantic_selection
+│       │   └── mod.rs
+│       ├── settings
+│       │   └── mod.rs
+│       └── sync_queue.rs
+├── warp_terminal
+│   ├── Cargo.toml
+│   └── src
+│       ├── lib.rs
+│       └── model
+│           ├── ansi
+│           │   └── control_sequence_parameters.rs
+│           ├── grid
+│           │   ├── flat_storage
+│           │   │   ├── content.rs
+│           │   │   ├── grapheme.rs
+│           │   │   ├── index.rs
+│           │   │   ├── mod.rs
+│           │   │   └── row_iterator.rs
+│           │   └── row.rs
+│           └── indexing.rs
+└── warp_util
+    ├── Cargo.toml
+    └── src
+        ├── assets.rs
+        ├── lib.rs
+        └── path.rs
+
+1053 directories, 2074 files
