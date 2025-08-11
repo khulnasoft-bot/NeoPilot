@@ -1,0 +1,8 @@
+[package]
+name = "warp_terminal"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "warp_terminal"
+path = "src/lib.rs"

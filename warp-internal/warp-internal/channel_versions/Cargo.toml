@@ -1,0 +1,12 @@
+[package]
+name = "channel_versions"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "channel_versions"
+path = "src/lib.rs"
+
+[[bin]]
+name = "start"
+path = "src/main.rs"

@@ -1,4 +1,4 @@
-// TODO: Add wasm-specific websocket logic here
-pub fn connect_wasm() {
-    // Connect to websocket in wasm environment
-}
+[dependencies]
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = ["WebSocket", "MessageEvent"] }
+wasm-bindgen-futures = "0.4"
